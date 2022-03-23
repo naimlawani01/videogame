@@ -16,7 +16,7 @@ Class Database{
         $this->dbuser= $dbuser;
         $this->dbpwd= $dbpwd;
     }
-    private function getPDO()
+    public function getPDO()
     {
         if($this->pdo == null)
         {
