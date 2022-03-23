@@ -1,6 +1,6 @@
 <?php
     require ('../vendor/autoload.php');
-    require('app/controllers/UserController.php');
+    require('../app/controllers/UserController.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +15,7 @@
 
     <h1>Heureux de pouvoir bientôt vous compter parmis nous !</h1>
 
-    <form action="register.html" id="formulaire">
+    <form action="" method="post" id="formulaire">
         
         <div id="formulaire">
 
