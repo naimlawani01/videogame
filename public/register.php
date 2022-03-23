@@ -1,3 +1,6 @@
+<?php
+    require('app/controllers/UserController.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
