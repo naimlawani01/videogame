@@ -1,5 +1,9 @@
 <?php
 
+use App\Database;
+
+$pdo = new Database('videogame');
+
 if(
     isset($_POST['nom']) && 
     isset($_POST['prenom']) && 
@@ -15,7 +19,16 @@ if(
         if($password === $confirmpassword){
             if(strlen($password)>8){
                 $password = sha1($password);
-                adduser($nom,$prenom,$email,$password);
+                $preparedRequest = $pdo->getPDO()->prepare('INSERT INTO utilisateur (nom, prenom, mail, password, role_id) VALUES (:nom, :prenom, :mail, :password, :role_id)');
+                $preparedRequest->execute(
+                    [
+                        'nom' => $nom,
+                        'prenom' => $prenom,
+                        'email' => $email,
+                        'password' => $password,
+                        'role_id' => 1
+                    ]
+                    );
             }
         }
     }
