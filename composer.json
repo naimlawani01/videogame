@@ -1,0 +1,13 @@
+{
+    "name": "naiml/videogame",
+    "authors": [{
+        "name": "Naim Imrane Lawani",
+        "email": "naimlawani01@gmail.com"
+    }],
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "require": {}
+}
