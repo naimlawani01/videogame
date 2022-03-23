@@ -11,11 +11,11 @@ if(
     $email = htmlspecialchars(trim($_POST['email']));
     $password = htmlspecialchars(trim($_POST['password']));
     $confirmpassword = htmlspecialchars(trim($_POST['confirmpassword']));
-    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        if ($password === $confirmpassword) {
-            if (strlen($password)>8) {
+    if(filter_var($email, FILTER_VALIDATE_EMAIL)){
+        if($password === $confirmpassword){
+            if(strlen($password)>8){
                 $password = sha1($password);
-                adduser($nom,$prenom,$email,$password,$confirmpassword);
+                adduser($nom,$prenom,$email,$password);
             }
         }
     }
