@@ -9,6 +9,7 @@ Class Database{
     private $dbname;
     private $dbuser;
     private $dbpwd;
+    private $pdo;
     public function __construct( $dbname, $host = 'localhost' , $dbuser= 'root', $dbpwd= '')
     {
         $this->host= $host;
@@ -17,9 +18,13 @@ Class Database{
         $this->dbpwd= $dbpwd;
     }
     public function getPDO()
-    { 
-        $pdo = new PDO('mysql:host='.$this->host.';dbname='.$this->dbname, $this->dbuser, $this->dbpwd );
-        $this->pdo = $pdo;
+    {
+        if($this->pdo == null)
+        {
+            $pdo = new PDO('mysql:host=localhost;dbname=videogame', 'root', '');
+            var_dump($pdo);
+            $this->pdo = $pdo;
+        }
         return $this->pdo;
 
     }

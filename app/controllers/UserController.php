@@ -2,7 +2,7 @@
 
 use App\Database;
 
-$pdo = new Database('videogame');
+$pdo = new PDO('mysql:host=localhost;dbname=videogame', 'root', '');;
 
 if(
     isset($_POST['nom']) && 
@@ -19,15 +19,13 @@ if(
         if($password === $confirmpassword){
             if(strlen($password)>8){
                 $password = sha1($password);
-                $preparedRequest = $pdo->getPDO()->prepare('INSERT INTO utilisateur (nom, prenom, mail, password, role_id) VALUES (:nom, :prenom, :mail, :password, :role_id)');
+                $preparedRequest = $pdo->prepare('INSERT INTO utilisateur (nom, prenom, mail, password, role_id) VALUES (:nom, :prenom, :mail, :password, :role_id)');
+                $preparedRequest->bindValue('nom', $nom, PDO::PARAM_STR);
+                $preparedRequest->bindValue('prenom', $prenom, PDO::PARAM_STR);
+                $preparedRequest->bindValue('mail', $email, PDO::PARAM_STR);
+                $preparedRequest->bindValue('password', $password, PDO::PARAM_STR);
+                $preparedRequest->bindValue('role_id', 1, PDO::PARAM_INT);
                 $preparedRequest->execute(
-                    [
-                        'nom' => $nom,
-                        'prenom' => $prenom,
-                        'email' => $email,
-                        'password' => $password,
-                        'role_id' => 1
-                    ]
                     );
             }
         }
