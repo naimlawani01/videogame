@@ -1,4 +1,5 @@
 <?php
+    require ('../vendor/autoload.php');
     require('app/controllers/UserController.php');
 ?>
 <!DOCTYPE html>
