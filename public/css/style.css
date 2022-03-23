@@ -1,0 +1,107 @@
+
+#formulaire { display: grid;
+    gap: 14px;
+margin:0 auto;
+margin-top: 20px;
+outline: none;
+   
+
+}
+
+form .test input[type="email"], input[type="nom"], input[type="prenom"],input[type="password"],input[type="confirmpassword"]{outline: none;}
+
+body { background-color: #f7f7f7;
+}
+
+.champ { 
+    background-color: #ffffff;
+    color: #989898;
+    width: 284px;
+    height: 44px;
+    border: 0;
+    font-family:'Helvetica' ;
+    outline: none;
+   
+
+
+}
+
+form.champ input{outline: none;}
+
+.champ { padding-left: 10px;}
+
+
+h1 { font-family:'Helvetica';
+font-size: 24px;
+text-align: center;
+margin-top: 80px;}
+
+#submit { 
+    width: 294px;
+    height: 44px;
+    background-color: #69a2f9;
+    color: #ffffff;
+    border: 0ch;
+    font-family:'Helvetica' ;
+}
+
+#ou { display: flex;
+    gap: 20px;
+    margin: 0 auto;
+    font-family:'Helvetica' ;
+    width: 284px;}
+
+#pou { padding: 0;
+margin: 0;
+color: #e4e4e4;
+font-size: 14px;}
+
+.squareou{ width: 128px;
+height: 1px;
+background-color:#e4e4e4 ;
+position: relative;
+top: 8px;
+font-family:'Helvetica' ;
+}
+
+#fbgoogle { display: flex;
+    gap: 12px;
+    margin: 0 auto;
+    box-shadow: 146 1 1 16 black;
+    
+   
+}
+
+.squarefbgoogle {
+
+    width: 136px;
+    height: 44px;
+    background-color: #ffffff;
+
+}
+
+#imgfb { width:74px;
+height: 44px;
+position: absolute;
+bottom: 200px;
+left: 338px;}
+
+#imgfb2 { 
+    width: 55%;
+    height: 89%;
+padding-left: 22%;
+padding-top: 2%;}
+
+#imggl2 { width:50% ;
+height:50% ;
+padding-left: 25%;
+padding-top: 10%;}
+
+#imggl { width: 70px;
+height: 25px;
+position: absolute;
+bottom: 300px;
+left: 488px;}
+
+
+
