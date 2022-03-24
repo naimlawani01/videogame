@@ -2,7 +2,12 @@
 
 use App\Database;
 
-$pdo = new PDO('mysql:host=localhost;dbname=videogame', 'root', '');;
+$pdo = new PDO('mysql:host=localhost;dbname=videogame', 'root', '');
+
+$preparedRequest1 = $pdo->query('SELECT mail FROM utilisateur');
+$result = $preparedRequest1->fetchAll(PDO::FETCH_ASSOC);
+var_dump($result);
+
 
 if(
     isset($_POST['nom']) && 
@@ -26,7 +31,7 @@ if(
                 $preparedRequest->bindValue('password', $password, PDO::PARAM_STR);
                 $preparedRequest->bindValue('role_id', 1, PDO::PARAM_INT);
                 $preparedRequest->execute(
-                    );
+                );
             }
         }
     }
