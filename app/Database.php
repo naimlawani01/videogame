@@ -16,7 +16,7 @@ Class Database{
         $this->dbuser= $dbuser;
         $this->dbpwd= $dbpwd;
     }
-    public function getPDO()
+    private function getPDO()
     {
         if($this->pdo == null)
         {
@@ -25,6 +25,12 @@ Class Database{
         }
         return $this->pdo;
 
+    }
+    public function querryInsert(){
+
+    }
+    public function querrySelect(){
+        
     }
 
 }
