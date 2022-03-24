@@ -20,15 +20,17 @@ if(
             if(strlen($password)>8){
                 $password = sha1($password);
                 $preparedRequest = $pdo->getPDO()->prepare('INSERT INTO utilisateur (nom, prenom, mail, password, role_id) VALUES (:nom, :prenom, :mail, :password, :role_id)');
+                
                 $preparedRequest->execute(
                     [
                         'nom' => $nom,
                         'prenom' => $prenom,
-                        'email' => $email,
+                        'mail' => $email,
                         'password' => $password,
                         'role_id' => 1
                     ]
                     );
+                    var_dump($preparedRequest);
             }
         }
     }
