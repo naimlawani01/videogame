@@ -1,8 +1,7 @@
 <?php
-
+session_start();
 require 'header.php';
 require('../app/controllers/RegisterController.php');
-require('../app/controllers/mailcontroller.php');
     
 ?>
 

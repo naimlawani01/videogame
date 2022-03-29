@@ -1,5 +1,4 @@
 <?php
-require (__DIR__. DIRECTORY_SEPARATOR.'mailcontroller.php');
 
 $errmail = false;
 $errpassword = false;
@@ -15,14 +14,10 @@ if(
     $email = htmlspecialchars(trim($_POST['email']));
     $password = htmlspecialchars(trim($_POST['password']));
     $confirmpassword = htmlspecialchars(trim($_POST['confirmpassword']));
-
-
-    foreach($result as $produit){
-        if ($email === $produit['mail']){
-            $errmail = true;
-            break;
-        }
-    };
+    $emailExit = mailExit($email, $db);
+    if($emailExit){
+        $errmail = true;
+    }
 
 
     if(filter_var($email, FILTER_VALIDATE_EMAIL) && $errmail === false){

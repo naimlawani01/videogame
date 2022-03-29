@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require 'header.php';
     require('../app/controllers/LoginController.php');
 
@@ -6,15 +7,9 @@
 
     <div id="formulaire">
         <h1>Bienvenue de retour parmis nous !</h1>
-        <?php if($rsl === 0 && $rslmail === 0 && isset($_POST['email']) ) { ?>
+        <?php if(isset($error) && $error!=null ) { ?>
             <div id="erreurformulaireC">
-                <p style="color: white;">Email non valide</p>
-            </div>
-        <?php }?>
-
-        <?php if($rsl === 0 && $rslmail >= 1 && isset($_POST['email']) ) { ?>
-            <div id="erreurformulaireC">
-                <p style="color: white;">mots de passe non valide</p>
+                <p style="color: white;"><?=$error?></p>
             </div>
         <?php }?>
         

@@ -175,6 +175,11 @@ h1 {
     margin-right: 4%;
 }
 
+.divconnect a {
+    text-decoration: none;
+    color: black;
+}
+
 #divconnect {
     width: 20%;
     height: 44px;

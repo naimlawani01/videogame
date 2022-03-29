@@ -1,6 +1,8 @@
-<?php $title = "home" ?>
-
-    <?php require 'header.php'; ?>
+<?php
+    session_start();
+    $title = "home";
+    require 'header.php'; 
+?>
     <main>
         <div id="imt">
             <div id="imgch">

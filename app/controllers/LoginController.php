@@ -1,28 +1,18 @@
 <?php 
 
 $rsl=0;
-if (isset($_POST['email'])) {$email = $_POST['email'];};
-if (isset($_POST['password'])) { $password = sha1($_POST['password']); };
 if (isset($_POST['email']) && isset($_POST['password'])) {
-    $sqluser = 'SELECT mail,password FROM utilisateur WHERE mail=:email AND password= :password';
-    $queryuser = $db->getPDO()->prepare($sqluser);
-    $queryuser->execute([
-        'email' => $email,
-        'password' => $password
-    ]);
-    $resultuser = $queryuser->fetchAll(PDO::FETCH_ASSOC);
-    $rsl = count($resultuser);
+    $email = $_POST['email'];
+    $password = sha1($_POST['password']);
+    $user = userExit($email, $password, $db);
+    var_dump(($user));
+    if($user){
+        $_SESSION['userid']= $user['id'];
+        
+        header('location: index.php');
+    }else{
+        $error = "Non d'utilisateur ou mot de passe incorect";
+    }
+
 }
     
-$rslmail=0;
-if (isset($_POST['email'])) {$email = $_POST['email'];};
-if (isset($_POST['password'])) { $password = sha1($_POST['password']); };
-if (isset($_POST['email']) && isset($_POST['password'])) {
-    $sqlusermail = 'SELECT mail FROM utilisateur WHERE mail=:email';
-    $queryusermail = $db->getPDO()->prepare($sqlusermail );
-    $queryusermail->execute([
-        'email' => $email,
-    ]);
-    $resultusermail = $queryusermail->fetchAll(PDO::FETCH_ASSOC);
-    $rslmail = count($resultusermail);
-}

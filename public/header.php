@@ -1,5 +1,7 @@
 <?php
+
 require '../vendor/autoload.php';
+require '../app/models/function.php';
 use App\Database;
 $db = new Database('videogame'); 
 ?>
@@ -10,6 +12,7 @@ $db = new Database('videogame');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title><?= $title?></title>
 </head>
 <body>
@@ -54,12 +57,21 @@ $db = new Database('videogame');
             </ul>
         </div>
     </div>
+    <?php if(isConnected()): ?>
     <div id="connectregister">
         <div class="divconnect">
-        <a href="register.php"> S'inscire</a>
+            <a href="dashboard.php"> <i class="fa fa-user-circle fa-1x" aria-hidden="true"></i> <?php $user= getUser($_SESSION['userid'], $db); ?><?=$user['mail']?></a>
+        </div>
+
+    </div>
+    <?php else: ?>
+    <div id="connectregister">
+        <div class="divconnect">
+        <a href="register.php"> S'inscrire</a>
         </div>
         <div class="divconnect">
-           <a href="login.php">Se Connecter</a> 
+            <a href="login.php">Se Connecter</a> 
         </div>
     </div>
+    <?php endif; ?>
 </header>
