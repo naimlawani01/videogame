@@ -545,3 +545,8 @@ main {
         background-color: #FFFFFF;
     }
 }
+
+.divconnect>a {
+    text-decoration: none;
+    color: #000000;
+}
