@@ -1,19 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
-</head>
-<body>
-    <form action="Register.html">
+
+    <form action="../public/index.php">
         <div id="formulaire">
             <h1>Bienvenue de retour parmis nous !</h1>
             
 
-            <form action="Register.html" id="formulaire">
+            <form action="../public/index.php" id="formulaire">
                 
                 <div id="formulaire">
         
@@ -45,11 +36,11 @@
                 <div id="fbgoogle">
                     <div class="squarefbgoogle">
         
-                        <img id="imgfb2" src="Facebook-logo.png" alt="fb"  >
+                        <img id="imgfb2" src="img/Facebook-logo.png" alt="fb"  >
                         
                     </div>
                     <div class="squarefbgoogle">
-                        <img id="imggl2" src="../580b57fcd9996e24bc43c51f.png" alt="ggl">
+                        <img id="imggl2" src="img/580b57fcd9996e24bc43c51f.png" alt="ggl">
              
                     </div>
                 </div>
@@ -66,10 +57,3 @@
                 
             </form>
         
-        
-            
-    
-
-    
-</body>
-</html>

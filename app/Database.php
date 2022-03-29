@@ -1,6 +1,7 @@
 <?php
 namespace App;
 
+
 use PDO;
 
 Class Database{
@@ -19,20 +20,10 @@ Class Database{
     }
     public function getPDO()
     {
-        if($this->pdo == null)
-        {
-            $pdo = new PDO('mysql:host=localhost;dbname=videogame', 'root', '');
-            var_dump($pdo);
-            $this->pdo = $pdo;
-        }
-        return $this->pdo;
+
+        return $this->pdo?? $this->pdo = new PDO("mysql:host=localhost;dbname={$this->dbname}", $this->dbuser, $this->dbpwd);
 
     }
-    public function querryInsert(){
 
-    }
-    public function querrySelect(){
-
-    }
 
 }
