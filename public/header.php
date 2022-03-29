@@ -1,3 +1,8 @@
+<?php
+require '../vendor/autoload.php';
+use App\Database;
+$db = new Database('videogame'); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
