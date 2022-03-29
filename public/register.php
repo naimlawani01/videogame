@@ -1,7 +1,9 @@
 <?php
     require ('../vendor/autoload.php');
     require('../app/function.php');
+    require('../app/controllers/mailcontroller.php');
     require('../app/controllers/UserController.php');
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +18,16 @@
 
     <h1>Heureux de pouvoir bientôt vous compter parmis nous !</h1>
 
+    <?php if($errmail === true) { ?>
+        <div id="erreurformulaireC">
+            <p style="color: white;">Email non valide</p>
+        </div>
+    <?php }?>
+    <?php if($errpassword === true) { ?>
+        <div id="erreurformulaireC">
+            <p style="color: white;">les mots de passe ne correspondent pas</p>
+        </div>
+    <?php }?>
     <form action="" id="formulaire" method="post">
         
         <div id="formulaire">

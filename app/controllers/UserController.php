@@ -2,12 +2,12 @@
 
 use App\Database;
 
+require (__DIR__. DIRECTORY_SEPARATOR.'mailcontroller.php');
+
 $pdo = new PDO('mysql:host=localhost;dbname=videogame', 'root', '');
 
-$preparedRequest1 = $pdo->query('SELECT mail FROM utilisateur');
-$result = $preparedRequest1->fetchAll(PDO::FETCH_ASSOC);
-var_dump($result);
-
+$errmail = false;
+$errpassword = false;
 
 if(
     isset($_POST['nom']) && 
@@ -20,7 +20,17 @@ if(
     $email = htmlspecialchars(trim($_POST['email']));
     $password = htmlspecialchars(trim($_POST['password']));
     $confirmpassword = htmlspecialchars(trim($_POST['confirmpassword']));
-    if(filter_var($email, FILTER_VALIDATE_EMAIL)){
+
+
+    foreach($result as $produit){
+        if ($email === $produit['mail']){
+            $errmail = true;
+            break;
+        }
+    };
+
+
+    if(filter_var($email, FILTER_VALIDATE_EMAIL) && $errmail === false){
         if($password === $confirmpassword){
             if(strlen($password)>8){
                 $password = sha1($password);
@@ -31,8 +41,8 @@ if(
                 $preparedRequest->bindValue('password', $password, PDO::PARAM_STR);
                 $preparedRequest->bindValue('role_id', 1, PDO::PARAM_INT);
                 $preparedRequest->execute(
-                );
+                );$errmail === false;
             }
-        }
+        } else { $errpassword = true;}
     }
 }
