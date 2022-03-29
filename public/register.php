@@ -1,6 +1,5 @@
 <?php
     require ('../vendor/autoload.php');
-    require('../app/function.php');
     require('../app/controllers/mailcontroller.php');
     require('../app/controllers/UserController.php');
     
