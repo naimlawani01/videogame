@@ -48,6 +48,13 @@ require('../app/controllers/RegisterController.php');
         <input type="password" name="confirmpassword" id="confirmpasswordid" placeholder="Confirmez le Mot de passe" class="champ">
         </div>
         <div >
+            <select name="role" id="roleis">
+            <option value="">Role</option>
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+            </select>
+        </div>
+        <div >
             <input type="submit" value="Créer mon compte" id="submit">
         </div>
 
