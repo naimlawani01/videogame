@@ -1,5 +1,6 @@
 <?php
 session_start();
+$title = 'Inscription';
 require 'header.php';
 require('../app/controllers/RegisterController.php');
     
@@ -49,9 +50,8 @@ require('../app/controllers/RegisterController.php');
         </div>
         <div >
             <select name="role" id="roleis">
-            <option value="">Role</option>
-                <option value="dog">Dog</option>
-                <option value="cat">Cat</option>
+                <option value="1">Client</option>
+                <option value="2">vendeur</option>
             </select>
         </div>
         <div >

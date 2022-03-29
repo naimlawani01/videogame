@@ -550,3 +550,13 @@ main {
     text-decoration: none;
     color: #000000;
 }
+
+#roleis {
+    background-color: #ffffff;
+    color: #989898;
+    width: 296px;
+    height: 46px;
+    border: 0;
+    font-family: 'Helvetica';
+    outline: none;
+}
