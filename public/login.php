@@ -1,5 +1,6 @@
 <?php
     session_start();
+    $title = 'Connexion';
     require 'header.php';
     require('../app/controllers/LoginController.php');
 

@@ -1,5 +1,6 @@
 <?php
 session_start();
+$title = 'Inscription';
 require 'header.php';
 require('../app/controllers/RegisterController.php');
     
@@ -46,6 +47,12 @@ require('../app/controllers/RegisterController.php');
         <div>
         <label for="confirmpasswordid"></label>
         <input type="password" name="confirmpassword" id="confirmpasswordid" placeholder="Confirmez le Mot de passe" class="champ">
+        </div>
+        <div >
+            <select name="role" id="roleis">
+                <option value="1">Client</option>
+                <option value="2">vendeur</option>
+            </select>
         </div>
         <div >
             <input type="submit" value="Créer mon compte" id="submit">

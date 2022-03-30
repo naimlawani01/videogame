@@ -45,4 +45,33 @@ function getSellerGame($userId, $db){
     ]);
     $datas = $stmt->fetch(PDO::FETCH_ASSOC);
     return $datas;
+function getedition($db,$ie){
+    $sqled = 'SELECT edition.id, edition.editeur, support.nom as support, plateforme.nom as plateforme, edition.img FROM edition,plateforme,support WHERE edition.platforme_id = plateforme.id AND edition.support_id = support.id AND plateforme.id = '.$ie.' LIMIT 5';
+    $queryed = $db->getPDO()->prepare($sqled);
+    $queryed->execute();
+    $dataed = $queryed->fetchAll(PDO::FETCH_ASSOC);
+    return $dataed;
+}
+
+function geteditions($db){
+    $sqled = 'SELECT * FROM edition';
+    $queryed = $db->getPDO()->prepare($sqled);
+    $queryed->execute();
+    $dataeds = $queryed->fetchAll(PDO::FETCH_ASSOC);
+    return $dataeds;
+}
+
+function getplt($db){
+    $sqled = 'SELECT * FROM plateforme';
+    $queryed = $db->getPDO()->prepare($sqled);
+    $queryed->execute();
+    $dataeds = $queryed->fetchAll(PDO::FETCH_ASSOC);
+    return $dataeds;
+}
+function getsupt($db){
+    $sqled = 'SELECT * FROM support';
+    $queryed = $db->getPDO()->prepare($sqled);
+    $queryed->execute();
+    $dataeds = $queryed->fetchAll(PDO::FETCH_ASSOC);
+    return $dataeds;
 }
