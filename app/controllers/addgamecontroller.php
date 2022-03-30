@@ -14,7 +14,6 @@ if(
     $prix = htmlspecialchars(trim($_POST['prix']));
     $description = htmlspecialchars(trim($_POST['description']));
     $vendeur_id = $_SESSION['userid'];
-    echo 'yes';
 
     if($_SESSION['userid']){;
             $preparedRequest1 = $db->getPDO()->prepare('INSERT INTO jeu (etat, prix, edition_id, vendeur_id, description, plateforme_id, support_id) VALUES (:etat, :prix, :edition_id, :vendeur_id, :description, :plateforme_id, :support_id)');
