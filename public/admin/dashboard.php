@@ -5,7 +5,7 @@ require '../../app/models/function.php';
 use App\Database;
 
 $db = new Database('videogame'); 
-require '../../app/controllers/DashbordController.php';
+require '../../app/controllers/AdminController.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +18,7 @@ require '../../app/controllers/DashbordController.php';
     <title></title>
     <!-- Theme style -->
     <link rel="stylesheet" href="../css/adminlte.min.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <!--
 `body` tag options:
@@ -60,8 +61,8 @@ require '../../app/controllers/DashbordController.php';
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
-                        <i class="fa fa-user-circle" aria-hidden="true"></i>
+                    <div style="color: white;" class="image">
+                        <i class="fa fa-user-circle fa-2x" aria-hidden="true"></i>
                     </div>
                     <div class="info">
                         <a href="#" class="d-block"><?=$user['nom']?></a>
@@ -80,7 +81,34 @@ require '../../app/controllers/DashbordController.php';
                             <a href="dashboard.php" class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
-                                    Jeux
+                                    Edition 
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item menu-open">
+                            <a href="dashboard.php" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Categorie
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item menu-open">
+                            <a href="dashboard.php" class="nav-link ">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Plateforme
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item menu-open">
+                            <a href="dashboard.php" class="nav-link ">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Support
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
@@ -100,12 +128,12 @@ require '../../app/controllers/DashbordController.php';
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Ajouter un jeux</h1>
+                            <h1 class="m-0">Edition jeux</h1>
                         </div>
                         <!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="float-sm-right">
-                                <a name="" id="" class="btn btn-primary" href="addgame.php" role="button"><i class="fa fa-plus fa-" aria-hidden="true"></i> Ajouter un jeu</a>
+                                <a name="" id="" class="btn btn-primary" href="addedition.php" role="button"><i class="fa fa-plus fa-" aria-hidden="true"></i> Ajouter un Editions</a>
                             </ol>
                         </div>
                         <!-- /.col -->
@@ -124,21 +152,19 @@ require '../../app/controllers/DashbordController.php';
                             <tr>
                                 <th>#</th>
                                 <th>Nom </th>
-                                <th>Catégorie</th>
-                                <th>Etat</th>
-                                <th>Prix</th>
+                                <th>pegi</th>
+                                <th>Categorie</th>
                                 <th></th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach($games as $game):?>
+                            <?php foreach($editions as $edition):?>
                             <tr>
                                 <td scope="row"></td>
-                                <td><?=$game['editeur']?></td>
-                                <td><?=$game['categorie']?></td>
-                                <td><?=$game['etat']?></td>
-                                <td><?=$game['prix']?><strong>€</strong> </td>
+                                <td><?=$edition['editeur']?></td>
+                                <td><?=$edition['pegi']?></td>
+                                <td><?=$edition['categorie']?></td>
                                 <td><a name="" id="" class="btn btn-warning" href="#" role="button">Modifier</a></td>
                                 <td><a name="" id="" class="btn btn-danger" href="#" role="button">Supprimer</a></td>
                             </tr>

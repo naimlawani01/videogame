@@ -43,7 +43,7 @@ function getSellerGame($userId, $db){
     $stmt->execute([
         'userId' => $userId
     ]);
-    $datas = $stmt->fetch(PDO::FETCH_ASSOC);
+    $datas = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $datas;
 }
 function getedition($db,$ie){
@@ -55,7 +55,7 @@ function getedition($db,$ie){
 }
 
 function geteditions($db){
-    $sqled = 'SELECT * FROM edition';
+    $sqled = 'SELECT * FROM edition INNER JOIN categorie ON edition.categorie_id = categorie.id ';
     $queryed = $db->getPDO()->prepare($sqled);
     $queryed->execute();
     $dataeds = $queryed->fetchAll(PDO::FETCH_ASSOC);
@@ -75,4 +75,11 @@ function getsupt($db){
     $queryed->execute();
     $dataeds = $queryed->fetchAll(PDO::FETCH_ASSOC);
     return $dataeds;
+}
+
+function getCategorie($db){
+    $stmt = $db->getPDO()->prepare('SELECT * FROM categorie');
+    $stmt->execute();
+    $datas= $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $datas;
 }

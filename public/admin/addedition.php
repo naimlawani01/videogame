@@ -5,7 +5,7 @@ require '../../app/models/function.php';
 use App\Database;
 
 $db = new Database('videogame'); 
-require '../../app/controllers/DashbordController.php';
+require '../../app/controllers/AddEditionController.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +18,7 @@ require '../../app/controllers/DashbordController.php';
     <title></title>
     <!-- Theme style -->
     <link rel="stylesheet" href="../css/adminlte.min.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <!--
 `body` tag options:
@@ -60,8 +61,8 @@ require '../../app/controllers/DashbordController.php';
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
-                        <i class="fa fa-user-circle" aria-hidden="true"></i>
+                    <div style="color: white;" class="image">
+                        <i class="fa fa-user-circle fa-2x" aria-hidden="true"></i>
                     </div>
                     <div class="info">
                         <a href="#" class="d-block"><?=$user['nom']?></a>
@@ -80,7 +81,34 @@ require '../../app/controllers/DashbordController.php';
                             <a href="dashboard.php" class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
-                                    Jeux
+                                    Edition 
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item menu-open">
+                            <a href="dashboard.php" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Categorie
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item menu-open">
+                            <a href="dashboard.php" class="nav-link ">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Plateforme
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item menu-open">
+                            <a href="dashboard.php" class="nav-link ">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Support
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
@@ -119,33 +147,37 @@ require '../../app/controllers/DashbordController.php';
             <!-- Main content -->
             <div class="content">
                 <div class="container-fluid">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Nom </th>
-                                <th>Catégorie</th>
-                                <th>Etat</th>
-                                <th>Prix</th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach($games as $game):?>
-                            <tr>
-                                <td scope="row"></td>
-                                <td><?=$game['editeur']?></td>
-                                <td><?=$game['categorie']?></td>
-                                <td><?=$game['etat']?></td>
-                                <td><?=$game['prix']?><strong>€</strong> </td>
-                                <td><a name="" id="" class="btn btn-warning" href="#" role="button">Modifier</a></td>
-                                <td><a name="" id="" class="btn btn-danger" href="#" role="button">Supprimer</a></td>
-                            </tr>
-                            <?php endforeach; ?>
-                          
-                        </tbody>
-                    </table>
+                    <form action="" id="formulaire" method="post" enctype="multipart/form-data">
+                        <div id="formulairejeu">
+                            <div style="display: flex;flex-direction:column">
+                                <label for="editeur">Editeur</label>
+                                <input style="width: 100%;height:46px;border:0px" type="text" name="editeur" id="editeur">
+                            </div>
+                            <div style="display: flex;flex-direction:column">
+                                <label for="pegi">PEGI</label>
+                                <input name="pegi" type="text" style="width: 100%;height:46px;border:0px">
+                            </div>
+                            <div style="display: flex;flex-direction:column">
+                                <label for="categorie">Categorie</label>
+                                <select name="categorie" id="roleis">
+                                    <?php foreach ($categories as $categorie) { ?>
+                                        <option value="<?= $categorie['id'] ?>"><?= $categorie['categorie'] ?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+                            <div style="display: flex;flex-direction:column">
+                                <label for="image">Image </label>
+                                <input type="file" name="image" id="image" cols="30" rows="10">
+                            </div>
+                            <div style="display: flex;flex-direction:column">
+                                <label for="description">Description</label>
+                                <textarea name="description" id="description" cols="30" rows="10"></textarea>
+                            </div>
+                            <div>
+                                <input type="submit" value="Ajouter le jeu" id="submit">
+                            </div>
+                        </div>
+                    </form>
                 </div>
                 <!-- /.container-fluid -->
             </div>
@@ -154,12 +186,6 @@ require '../../app/controllers/DashbordController.php';
         <!-- /.content-wrapper -->
 
         <!-- Main Footer -->
-        <footer class="main-footer">
-            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-            <div class="float-right d-none d-sm-inline-block">
-                <b>Version</b> 3.2.0
-            </div>
-        </footer>
     </div>
     <!-- ./wrapper -->
 

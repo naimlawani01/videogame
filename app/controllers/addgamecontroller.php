@@ -26,7 +26,6 @@ if(
             $preparedRequest1->bindValue('plateforme_id', $plateforme, PDO::PARAM_INT);
             $preparedRequest1->bindValue('support_id', $support, PDO::PARAM_INT);
             $preparedRequest1->execute();
-            echo 'yes';
     } else { $err = true;}
     
 }

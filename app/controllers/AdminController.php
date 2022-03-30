@@ -4,7 +4,5 @@ if(!isConnected()){
 }
 $userId = $_SESSION['userid'];
 
-$games = getSellerGame($userId, $db);
+$editions = geteditions($db);
 $user= getUser($_SESSION['userid'], $db);
-
-
