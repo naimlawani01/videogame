@@ -465,7 +465,7 @@
         display: flex;
         flex-direction: column;
         width: 40%;
-        background-color: white;
+        background-color: #F7F7F7;
         padding: 2% 3%;
     }
     
@@ -473,7 +473,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: #69A2F9;
+        background-color: #5622ED;
         margin: 9% -6%;
         padding: 6% 20%;
         color: white;
@@ -490,7 +490,6 @@
         display: flex;
         justify-content: center;
         gap: 2%;
-        padding: 0 5%;
         height: 100%;
     }
     
@@ -759,7 +758,7 @@
         display: flex;
         flex-direction: column;
         width: 40%;
-        background-color: white;
+        background-color: #F7F7F7;
         padding: 2% 3%;
         justify-content: space-between;
     }
@@ -769,7 +768,6 @@
         justify-content: center;
         gap: 2%;
         /* padding: 0 5%; */
-        height: 480px;
     }
     
     #detj2 {
@@ -819,7 +817,6 @@
             justify-content: center;
             gap: 2%;
             /* padding: 0 5%; */
-            height: 370px;
         }
         #butdmp {
             height: 58px;
@@ -852,7 +849,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #69A2F9;
+            background-color: #5622ED;
             margin: 5% 1%;
             padding: 6% 20%;
             color: white;

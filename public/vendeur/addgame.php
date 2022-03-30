@@ -6,6 +6,12 @@ use App\Database;
 
 $db = new Database('videogame'); 
 require '../../app/controllers/DashbordController.php';
+require('../../app/controllers/addgamecontroller.php');
+$title = 'Inscription';
+$edition = geteditions($db);
+$platforme = getplt($db);
+$support = getsupt($db);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,6 +21,7 @@ require '../../app/controllers/DashbordController.php';
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
     <title>AdminLTE 3 | Dashboard 3</title>
     <!-- Theme style -->
     <link rel="stylesheet" href="../css/adminlte.min.css">
@@ -99,9 +106,6 @@ require '../../app/controllers/DashbordController.php';
             <div class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1 class="m-0">Mes jeux</h1>
-                        </div>
                         <!-- /.col -->
                         <!-- /.col -->
                     </div>
@@ -114,7 +118,61 @@ require '../../app/controllers/DashbordController.php';
             <!-- Main content -->
             <div class="content">
                 <div class="container-fluid">
+                <h1>Vendre un jeu !</h1>
+                <form action="" id="formulaire" method="post">
+                    
+                    <div id="formulairejeu">
 
+                        <div style="display: flex;flex-direction:column">
+                            <label for="edition">Edition</label>
+                            <select name="edition" id="roleis">
+                                <?php foreach ($edition as $editu) { ?>
+                                    <option value="<?= $editu['id'] ?>"><?= $editu['editeur'] ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+
+                        <div style="display: flex;flex-direction:column">
+                            <label for="plateforme">Plateforme</label>
+                            <select name="plateforme" id="roleis">
+                                <?php foreach ($platforme as $platu) { ?>
+                                    <option value="<?= $platu['id'] ?>"><?= $platu['nom'] ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+
+                        <div style="display: flex;flex-direction:column">
+                            <label for="support">Support</label>
+                            <select name="support" id="roleis">
+                                <?php foreach ($support as $suptu) { ?>
+                                    <option value="<?= $suptu['id'] ?>"><?= $suptu['nom'] ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+
+                        <div style="display: flex;flex-direction:column">
+                            <label for="etat">Etat</label>
+                            <select name="etat" id="roleis">
+                                <option value="Neuf">Neuf</option>
+                                <option value="Bon">Bon</option>
+                                <option value="Mauvais">Mauvais</option>
+                            </select>
+                        </div>
+                        
+                        <div style="display: flex;flex-direction:column">
+                            <label for="prix">Prix</label>
+                            <input name="prix" type="number" style="width: 100%;height:46px;border:0px">
+                        </div>
+
+                        <div style="display: flex;flex-direction:column">
+                            <label for="description">Pescription</label>
+                            <input name="description" type="text" style="width: 100%;height:100px;border:0px">
+                        </div>
+                        <div>
+                            <input type="submit" value="Ajouter le jeu" id="submit">
+                        </div>
+                    </div>
+                </form>
                 </div>
                 <!-- /.container-fluid -->
             </div>

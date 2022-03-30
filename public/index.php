@@ -6,6 +6,7 @@
 ?>
 <body style="background-color: #FFFFFF;">
 <main style="background-color:#FFFFFF;margin: 0 10%">
+    <?php if (isConnected() === false) { ?>
     <div id="dvhh">
         <div>
             <h1>Deviens membre de notre communauté !</h1>
@@ -13,6 +14,7 @@
         </div>
         <button id="butdm">Devenir vendeur</button>
     </div>
+    <?php } ?>
     <h1 id="hddhdhd">Achetez au meilleur Prix</h1>
     <div id="dvlog">
         <div id="dvlos">

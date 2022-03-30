@@ -11,17 +11,6 @@ $support = getsupt($db);
 
 
 <h1>Vendre un jeu !</h1>
-
-<?php if($errmail === true) { ?>
-    <div id="erreurformulaireC">
-        <p style="color: white;">Email non valide</p>
-    </div>
-<?php }?>
-<?php if($errpassword === true) { ?>
-    <div id="erreurformulaireC">
-        <p style="color: white;">les mots de passe ne correspondent pas</p>
-    </div>
-<?php }?>
 <form action="" id="formulaire" method="post">
     
     <div id="formulairejeu">
