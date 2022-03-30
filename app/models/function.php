@@ -36,3 +36,13 @@ function getUser($userId, $db){
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
     return $user;
 }
+function getSellerGame($userId, $db){
+    $req = "SELECT * FROM jeu INNER JOIN edition ON jeu.edition_id = edition.id INNER JOIN categorie ON categorie.id = edition.categorie_id WHERE vendeur_id = :userId";
+    $stmt = $db->getPDO()->prepare($req);
+
+    $stmt->execute([
+        'userId' => $userId
+    ]);
+    $datas = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $datas;
+}

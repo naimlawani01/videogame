@@ -60,7 +60,7 @@ $db = new Database('videogame');
     <?php if(isConnected()): ?>
     <div id="connectregister">
         <div class="divconnect">
-            <a href="dashboard.php"> <i class="fa fa-user-circle fa-1x" aria-hidden="true"></i> <?php $user= getUser($_SESSION['userid'], $db); ?><?=$user['mail']?></a>
+            <a href="vendeur/dashboard.php"> <i class="fa fa-user-circle fa-1x" aria-hidden="true"></i> <?php $user= getUser($_SESSION['userid'], $db); ?><?=$user['mail']?></a>
         </div>
 
     </div>
