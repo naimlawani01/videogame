@@ -6,14 +6,22 @@
 ?>
 <body style="background-color: #FFFFFF;">
 <main style="background-color:#FFFFFF;margin: 0 10%">
-    <?php if (isConnected() === false) { ?>
+    <?php if (isConnected() === true) { ?>
     <div id="dvhh">
         <div>
-            <h1>Deviens membre de notre communauté !</h1>
-            <h3>Inscris toi pour pouvoir commencer à vendre tes premiers Jeux Vidéos ou Consoles</h3>
+            <h1>Bienvenue de retour parmis nous !</h1>
+            <h3>Commence à vendre tes premiers Jeux Vidéos ou Consoles</h3>
         </div>
         <button id="butdm">Devenir vendeur</button>
     </div>
+    <?php } else { ?>
+        <div id="dvhh">
+            <div>
+                <h1>Deviens membre de notre communauté !</h1>
+                <h3>Inscris toi pour pouvoir commencer à vendre tes premiers Jeux Vidéos ou Consoles</h3>
+            </div>
+            <button id="butdm">Vendre un jeu</button>
+        </div>
     <?php } ?>
     <h1 id="hddhdhd">Achetez au meilleur Prix</h1>
     <div id="dvlog">
@@ -61,40 +69,40 @@
     <div id="aftj2">
         <?php /* for( $i= 0 ;$i < 5; $i++ ) { */?>
             <div id="card12">
-                <div style="width: 100%;"><img width="100%" src="img/Ellipse 12.png" alt=""></div>
+                <div id="dvhaimg" style="width: 100%;"><img width="50%" style="padding: 15% 0px;" src="img/Ellipse 12.png" alt=""></div>
                 <div id="detj2">
                     <h4 style="margin: 3%;">Demon Lime</h4>
                     <p style="margin: 0 3%;">+100 jeux</p>
                     <img src="img/Frame 60.png" alt="">
                 </div>
-                <div id="btnje"><h4 style="margin: 3%;">Voir l'article</h4></div>
+                <div id="btnje"><h4 style="margin: 3%;">Voir le Profil</h4></div>
             </div>
             <div id="card12">
-                <div style="width: 100%;"><img width="100%" src="img/Ellipse 12.png" alt=""></div>
+                <div id="dvhaimg" style="width: 100%;"><img width="50%" style="padding: 15% 0px;" src="img/Ellipse 12.png" alt=""></div>
                 <div id="detj2">
                     <h4 style="margin: 3%;">Demon Lime</h4>
                     <p style="margin: 0 3%;">+100 jeux</p>
                     <img src="img/Frame 60.png" alt="">
                 </div>
-                <div id="btnje"><h4 style="margin: 3%;">Voir l'article</h4></div>
+                <div id="btnje"><h4 style="margin: 3%;">Voir le Profil</h4></div>
             </div>
             <div id="card12">
-                <div style="width: 100%;"><img width="100%" src="img/Ellipse 12.png" alt=""></div>
+                <div id="dvhaimg" style="width: 100%;"><img width="50%" style="padding: 15% 0px;" src="img/Ellipse 12.png" alt=""></div>
                 <div id="detj2">
                     <h4 style="margin: 3%;">Demon Lime</h4>
                     <p style="margin: 0 3%;">+100 jeux</p>
                     <img src="img/Frame 60.png" alt="">
                 </div>
-                <div id="btnje"><h4 style="margin: 3%;">Voir l'article</h4></div>
+                <div id="btnje"><h4 style="margin: 3%;">Voir le Profil</h4></div>
             </div>
             <div id="card12">
-                <div style="width: 100%;"><img width="100%" src="img/Ellipse 12.png" alt=""></div>
+                <div id="dvhaimg" style="width: 100%;"><img width="50%" style="padding: 15% 0px;" src="img/Ellipse 12.png" alt=""></div>
                 <div id="detj2">
                     <h4 style="margin: 3%;">Demon Lime</h4>
                     <p style="margin: 0 3%;">+100 jeux</p>
                     <img src="img/Frame 60.png" alt="">
                 </div>
-                <div id="btnje"><h4 style="margin: 3%;">Voir l'article</h4></div>
+                <div id="btnje"><h4 style="margin: 3%;">Voir le Profil</h4></div>
             </div>
         <?php // }?>
     </div>
@@ -111,6 +119,4 @@
                 </div>
             <?php }?>
         </div>
-
-    
 </main>
