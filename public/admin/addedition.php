@@ -149,6 +149,11 @@ require '../../app/controllers/AddEditionController.php';
                 <div class="container-fluid">
                     <form action="" id="formulaire" method="post" enctype="multipart/form-data">
                         <div id="formulairejeu">
+                            <?php if(isset($error) and $error): ?>
+                                <div class="card text-white bg-danger py-2">
+                                    <center><?=$error?></center>
+                                </div>
+                            <?php endif; ?>
                             <div style="display: flex;flex-direction:column">
                                 <label for="editeur">Editeur</label>
                                 <input style="width: 100%;height:46px;border:0px" type="text" name="editeur" id="editeur">

@@ -11,11 +11,28 @@ $categories = getCategorie($db);
 if(isset($_POST['editeur']) && isset($_POST['pegi']) && 
     isset($_POST['categorie']) && isset($_POST['description']) &&
     isset($_FILES['image'])){
+        $editeur = htmlspecialchars($_POST['editeur']); 
+        $pegi = htmlspecialchars($_POST['pegi']);
+        $description = htmlspecialchars($_POST['description']);
+        $categorie = htmlspecialchars($_POST['categorie']);
+
         $imageName= $_FILES['image']['name'];
         $imgInfo = pathinfo($imageName);
-        $valideExtension = ['jpeg', 'jpg', 'png', 'sql'];
+        $tmpName= $_FILES['image']['tmp_name'];
+        $valideExtension = ['jpeg', 'jpg', 'png'];
         if(in_array($imgInfo['extension'], $valideExtension)){
-            $newImgName= date('Y_m_d');
-            echo $newImgName;
+            $newImgName= "../img/upload/".date('Y_m_d').time();
+            move_uploaded_file($tmpName, $newImgName);
+            $datas = [
+                "editeur"=> $editeur, 
+                "pegi" => intval($pegi), 
+                "img" =>$newImgName, 
+                "description" =>$description, 
+                "categorie_id" => intval($categorie)
+
+            ];
+            if(addEdition($db, $datas)) echo 'Hello';
+        }else{
+            $error= "Extension Invalide";
         }
     }

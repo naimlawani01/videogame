@@ -161,7 +161,7 @@ require '../../app/controllers/AdminController.php';
                         <tbody>
                             <?php foreach($editions as $edition):?>
                             <tr>
-                                <td scope="row"></td>
+                                <td scope="row"><img height="65px"  src="<?=$edition['img']?>" alt=""></td>
                                 <td><?=$edition['editeur']?></td>
                                 <td><?=$edition['pegi']?></td>
                                 <td><?=$edition['categorie']?></td>

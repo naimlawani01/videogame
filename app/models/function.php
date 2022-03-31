@@ -83,3 +83,8 @@ function getCategorie($db){
     $datas= $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $datas;
 }
+function addEdition($db, $data){
+    $stmt = $db->getPDO()->prepare('INSERT INTO edition (editeur, pegi, img, description, categorie_id) VALUES (:editeur, :pegi, :img, :description, :categorie_id)');
+    var_dump($data);
+    return $stmt->execute($data);
+}
