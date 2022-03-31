@@ -94,7 +94,7 @@ function getCategorie($db){
     return $datas;
 }
 function addEdition($db, $data){
-    $stmt = $db->getPDO()->prepare('INSERT INTO edition (editeur, pegi, img, description, categorie_id) VALUES (:editeur, :pegi, :img, :description, :categorie_id)');
+    $stmt = $db->getPDO()->prepare('INSERT INTO edition (editeur, pegi, img_p, description, img_g, categorie_id) VALUES (:editeur, :pegi, :img_p, :description, :img_g ,:categorie_id)');
     var_dump($data);
     return $stmt->execute($data);
 }

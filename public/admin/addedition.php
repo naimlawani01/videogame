@@ -171,8 +171,12 @@ require '../../app/controllers/AddEditionController.php';
                                 </select>
                             </div>
                             <div style="display: flex;flex-direction:column">
-                                <label for="image">Image </label>
-                                <input type="file" name="image" id="image" cols="30" rows="10">
+                                <label for="image_p">Petite Image  </label>
+                                <input type="file" name="image_p" id="image_p" cols="30" rows="10">
+                            </div>
+                            <div style="display: flex;flex-direction:column">
+                                <label for="image_g">Grane Image </label>
+                                <input type="file" name="image_g" id="image_g" cols="30" rows="10">
                             </div>
                             <div style="display: flex;flex-direction:column">
                                 <label for="description">Description</label>
