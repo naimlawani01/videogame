@@ -1058,3 +1058,15 @@ main>h1 {
     display: flex;
     align-items: center;
 }
+
+#divctgfl {
+    display: flex;
+    gap: 1%;
+    margin: 1% 0%;
+}
+
+#divctgfl>div {
+    padding: 0px 4%;
+    background-color: #F7F7F7;
+    border-radius: 10px;
+}

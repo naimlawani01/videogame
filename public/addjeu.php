@@ -3,7 +3,7 @@ session_start();
 $title = 'Inscription';
 require 'header.php';
 require('../app/controllers/RegisterController.php');
-$edition = geteditions($db);
+$edition = getedition($db);
 $platforme = getplt($db);
 $support = getsupt($db);
     

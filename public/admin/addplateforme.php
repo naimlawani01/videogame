@@ -87,7 +87,7 @@ require '../../app/controllers/AddPlateformeController.php';
                             </a>
                         </li>
                         <li class="nav-item menu-open">
-                            <a href="dashboard.php" class="nav-link active">
+                            <a href="dashboard.php" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Categorie
@@ -96,7 +96,7 @@ require '../../app/controllers/AddPlateformeController.php';
                             </a>
                         </li>
                         <li class="nav-item menu-open">
-                            <a href="dashboard.php" class="nav-link ">
+                            <a href="dashboard.php" class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Plateforme
