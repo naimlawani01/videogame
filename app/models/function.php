@@ -88,3 +88,4 @@ function addEdition($db, $data){
     var_dump($data);
     return $stmt->execute($data);
 }
+
