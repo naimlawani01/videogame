@@ -83,3 +83,4 @@ function getCategorie($db){
     $datas= $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $datas;
 }
+
