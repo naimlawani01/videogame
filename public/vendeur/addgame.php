@@ -8,7 +8,7 @@ $db = new Database('videogame');
 require '../../app/controllers/DashbordController.php';
 require('../../app/controllers/addgamecontroller.php');
 $title = 'Inscription';
-$edition = geteditions($db);
+$edition = getedition($db);
 $platforme = getplt($db);
 $support = getsupt($db);
 
