@@ -67,10 +67,10 @@ $db = new Database('videogame');
     <?php else: ?>
     <div id="connectregister">
         <div class="divconnect">
-        <a href="register.php"> S'inscrire</a>
+        <a href="/register"> S'inscrire</a>
         </div>
         <div class="divconnect">
-            <a href="login.php">Se Connecter</a> 
+            <a href="/login">Se Connecter</a> 
         </div>
     </div>
     <?php endif; ?>
