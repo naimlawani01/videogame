@@ -31,7 +31,7 @@
             <div id="dvsoauf">
                 <h3 style="font-size: 130%;text-align: start;margin: 0px;font-weight:500;display:flex;align-items: center;">29.00$</h3>
                 <img style="width: 100%;" src="img/Frame 32.png" alt="">
-                <button id="butdmp1" style="padding: 0 60px;">Acheter</button>
+                <button id="butdmp1">Acheter</button>
             </div>
         </div>
         <div id="auof">
@@ -42,7 +42,7 @@
             <div id="dvsoauf">
                 <h3 style="font-size: 130%;text-align: start;margin: 0px;font-weight:500;display:flex;align-items: center;">29.00$</h3>
                 <img style="width: 100%;" src="img/Frame 32.png" alt="">
-                <button id="butdmp1" style="padding: 0 60px;">Acheter</button>
+                <button id="butdmp1">Acheter</button>
             </div>
         </div>
         <div id="auof">
@@ -53,7 +53,7 @@
             <div id="dvsoauf">
                 <h3 style="font-size: 130%;text-align: start;margin: 0px;font-weight:500;display:flex;align-items: center;">29.00$</h3>
                 <img style="width: 100%;" src="img/Frame 32.png" alt="">
-                <button id="butdmp1" style="padding: 0 60px;">Acheter</button>
+                <button id="butdmp1">Acheter</button>
             </div>
         </div>
         <div id="auof">
@@ -64,7 +64,7 @@
             <div id="dvsoauf">
                 <h3 style="font-size: 130%;text-align: start;margin: 0px;font-weight:500;display:flex;align-items: center;">29.00$</h3>
                 <img style="width: 100%;" src="img/Frame 32.png" alt="">
-                <button id="butdmp1" style="padding: 0 60px;">Acheter</button>
+                <button id="butdmp1">Acheter</button>
             </div>
         </div>
     </div>
