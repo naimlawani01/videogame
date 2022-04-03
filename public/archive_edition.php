@@ -2,12 +2,13 @@
     session_start();
     $title = "home";
     require 'header.php'; 
-    $ie = $_GET['plateforme'];
-    $ed = getjeu($db,$ie);
+    $edi = $_GET['id'];
+    $ed = getjeumarced($db,$edi);
 ?>
 <body style="background-color: white;">
+    <?php if ($ed) { ?>
     <main>
-        <h1>Jeux <?= $_GET['plateforme']?></h1>
+        <h1>Jeux <?= $ed[0]['editeur']?></h1>
         <div id="divctgfl">
             <div><p>Genre</p></div>
             <div><p>Prix</p></div>
@@ -22,7 +23,11 @@
                         <h4 style="margin: 3%;"><?= $edition['editeur'] ?></h4>
                         <p style="margin: 0 3%;">A partir de <strong><?= $edition['prix'] ?> €</strong> </p>
                     </div>
-                    <a href="single.php?id=<?= $edition['jeu_id']?>"><div id="btnje"><h4 style="margin: 3%;">Voir l'article</h4></div></a>
+                    <a href="single.php?id=<?= $edition['id']?>"><div id="btnje"><h4 style="margin: 3%;">Voir l'article</h4></div></a>
                 </div>
             <?php }?>
         </div>
+    </main>
+    <?php } else { ?>
+        <h1>Pas encore de jeux pour cette edition</h1>
+    <?php }?>

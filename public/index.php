@@ -2,7 +2,7 @@
     session_start();
     $title = "home";
     require 'header.php'; 
-
+    $edition = getedition($db);
 ?>
 <body style="background-color: #FFFFFF;">
 <main style="background-color:#FFFFFF;margin: 0 10%">
@@ -79,7 +79,7 @@
                 <div id="btnje"><h4 style="margin: 3%;">Voir le Profil</h4></div>
             </div>
             <div id="card12">
-                <div id="dvhaimg" style="width: 100%;"><img width="50%" style="padding: 15% 0px;" src="img/Ellipse 12.png" alt=""></div>
+                <div id="dvhaimg" style="width: 100%;"><img width="50%" style="padding: 15% 0px;" src="img/Ellipse 13.png" alt=""></div>
                 <div id="detj2">
                     <h4 style="margin: 3%;">Demon Lime</h4>
                     <p style="margin: 0 3%;">+100 jeux</p>
@@ -88,7 +88,7 @@
                 <div id="btnje"><h4 style="margin: 3%;">Voir le Profil</h4></div>
             </div>
             <div id="card12">
-                <div id="dvhaimg" style="width: 100%;"><img width="50%" style="padding: 15% 0px;" src="img/Ellipse 12.png" alt=""></div>
+                <div id="dvhaimg" style="width: 100%;"><img width="50%" style="padding: 15% 0px;" src="img/Ellipse 14.png" alt=""></div>
                 <div id="detj2">
                     <h4 style="margin: 3%;">Demon Lime</h4>
                     <p style="margin: 0 3%;">+100 jeux</p>
@@ -97,7 +97,7 @@
                 <div id="btnje"><h4 style="margin: 3%;">Voir le Profil</h4></div>
             </div>
             <div id="card12">
-                <div id="dvhaimg" style="width: 100%;"><img width="50%" style="padding: 15% 0px;" src="img/Ellipse 12.png" alt=""></div>
+                <div id="dvhaimg" style="width: 100%;"><img width="50%" style="padding: 15% 0px;" src="img/Ellipse 15.png" alt=""></div>
                 <div id="detj2">
                     <h4 style="margin: 3%;">Demon Lime</h4>
                     <p style="margin: 0 3%;">+100 jeux</p>
@@ -109,14 +109,14 @@
     </div>
     <h1 id="hds">Top jeux du moment</h1>
     <div id="aftj">
-            <?php  for( $i= 0 ;$i < 4; $i++ ) { ?>
+            <?php  for( $i= 0 ;$i < 5; $i++ ) { ?>
                 <div id="card1">
-                    <div style="width: 100%;"><img width="100%" src="img/img.png" alt=""></div>
+                    <div style="width: 100%;"><img width="100%" src=<?= $edition[$i]['img_p'] ?> alt=""></div>
                     <div id="detj">
-                        <h4 style="margin: 3%;">Grand Theft Auto</h4>
-                        <p style="margin: 0 3%;">A partir de </p>
+                        <h4 style="margin: 3%;"><?= $edition[$i]['editeur'] ?></h4>
+                        <p style="margin: 0 3%;"><?php echo substr($edition[$i]['description'], 0, 45).'...'; ?></p>
                     </div>
-                    <div id="btnje"><h4 style="margin: 3%;">Voir l'article</h4></div>
+                    <a href="archive_edition.php?id=<?= $edition[$i]['id']?>"><div id="btnje"><h4 style="margin: 3%;">Voir l'article</h4></div></a>
                 </div>
             <?php }?>
         </div>

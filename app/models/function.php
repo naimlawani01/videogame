@@ -47,15 +47,25 @@ function getSellerGame($userId, $db){
     return $datas;
 }
 function getedition($db){
-    $sqled = 'SELECT * FROM edition';
+    $sqled = 'SELECT * FROM edition ORDER BY id DESC';
     $queryed = $db->getPDO()->prepare($sqled);
     $queryed->execute();
     $dataed = $queryed->fetchAll(PDO::FETCH_ASSOC);
     return $dataed;
 }
 ///
+function getjeumarced($db,$jeuxid){
+    $sqled = "SELECT jeu.id, jeu.etat, jeu.prix, jeu.description,edition.editeur, edition.pegi,edition.img_p, edition.img_g, utilisateur.nom as nom_vendeur, plateforme.nom as nom_plateforme FROM jeu LEFT JOIN edition ON jeu.edition_id = edition.id LEFT JOIN plateforme ON jeu.plateforme_id = plateforme.id LEFT JOIN utilisateur ON jeu.vendeur_id = utilisateur.id WHERE edition.id = :id";
+    $queryed = $db->getPDO()->prepare($sqled);
+    $queryed->execute([
+        'id' => $jeuxid
+    ]);
+    $dataed = $queryed->fetchAll(PDO::FETCH_ASSOC);
+    return $dataed;
+}
+
 function getjeumarc($db,$jeuxid){
-    $sqled = "SELECT jeu.id, jeu.etat, jeu.prix, jeu.description,edition.editeur, edition.pegi, edition.img_g, utilisateur.nom as nom_vendeur, plateforme.nom as nom_plateforme FROM jeu LEFT JOIN edition ON jeu.edition_id = edition.id LEFT JOIN plateforme ON jeu.plateforme_id = plateforme.id LEFT JOIN utilisateur ON jeu.vendeur_id = utilisateur.id WHERE jeu.id = :id";
+    $sqled = "SELECT jeu.id, jeu.etat, jeu.prix, jeu.description,edition.editeur, edition.pegi,edition.img_p, edition.img_g, utilisateur.nom as nom_vendeur, plateforme.nom as nom_plateforme FROM jeu LEFT JOIN edition ON jeu.edition_id = edition.id LEFT JOIN plateforme ON jeu.plateforme_id = plateforme.id LEFT JOIN utilisateur ON jeu.vendeur_id = utilisateur.id WHERE jeu.id = :id";
     $queryed = $db->getPDO()->prepare($sqled);
     $queryed->execute([
         'id' => $jeuxid
@@ -66,7 +76,7 @@ function getjeumarc($db,$jeuxid){
 
 function getjeu($db,$ie){
     if ($ie === 'Playstation') {
-        $sqled = "SELECT * FROM jeu LEFT JOIN edition ON jeu.edition_id = edition.id LEFT JOIN plateforme ON jeu.plateforme_id = plateforme.id WHERE plateforme.nom = :plateforme1 OR plateforme.nom = :plateforme2 OR plateforme.nom = :plateforme3";
+        $sqled = "SELECT jeu.id as jeu_id, jeu.etat, jeu.prix,jeu.edition_id, jeu.vendeur_id, jeu.description, jeu.plateforme_id, jeu.support_id, edition.editeur, edition.pegi, edition.img_p, edition.description, edition.img_g, edition.categorie_id, plateforme.nom FROM jeu LEFT JOIN edition ON jeu.edition_id = edition.id LEFT JOIN plateforme ON jeu.plateforme_id = plateforme.id WHERE plateforme.nom = :plateforme1 OR plateforme.nom = :plateforme2 OR plateforme.nom = :plateforme3";
         $queryed = $db->getPDO()->prepare($sqled);
         $queryed->execute([
         'plateforme1' => 'PS4',
@@ -76,7 +86,7 @@ function getjeu($db,$ie){
         $dataed = $queryed->fetchAll(PDO::FETCH_ASSOC);
         return $dataed;
     } elseif ($ie === 'Xbox') {
-        $sqled = "SELECT * FROM jeu LEFT JOIN edition ON jeu.edition_id = edition.id LEFT JOIN plateforme ON jeu.plateforme_id = plateforme.id WHERE plateforme.nom = :plateforme1 OR plateforme.nom = :plateforme2 OR plateforme.nom = :plateforme3";
+        $sqled = "SELECT jeu.id as jeu_id, jeu.etat, jeu.prix,jeu.edition_id, jeu.vendeur_id, jeu.description, jeu.plateforme_id, jeu.support_id, edition.editeur, edition.pegi, edition.img_p, edition.description, edition.img_g, edition.categorie_id, plateforme.nom FROM jeu LEFT JOIN edition ON jeu.edition_id = edition.id LEFT JOIN plateforme ON jeu.plateforme_id = plateforme.id WHERE plateforme.nom = :plateforme1 OR plateforme.nom = :plateforme2 OR plateforme.nom = :plateforme3";
         $queryed = $db->getPDO()->prepare($sqled);
         $queryed->execute([
             'plateforme1' => 'Xbox One',
@@ -86,7 +96,7 @@ function getjeu($db,$ie){
         $dataed = $queryed->fetchAll(PDO::FETCH_ASSOC);
         return $dataed;
     } elseif ($ie === 'Nintendo') {
-        $sqled = "SELECT * FROM jeu LEFT JOIN edition ON jeu.edition_id = edition.id LEFT JOIN plateforme ON jeu.plateforme_id = plateforme.id WHERE plateforme.nom = :plateforme";
+        $sqled = "SELECT jeu.id as jeu_id, jeu.etat, jeu.prix,jeu.edition_id, jeu.vendeur_id, jeu.description, jeu.plateforme_id, jeu.support_id, edition.editeur, edition.pegi, edition.img_p, edition.description, edition.img_g, edition.categorie_id, plateforme.nom FROM jeu LEFT JOIN edition ON jeu.edition_id = edition.id LEFT JOIN plateforme ON jeu.plateforme_id = plateforme.id WHERE plateforme.nom = :plateforme";
         $queryed = $db->getPDO()->prepare($sqled);
         $queryed->execute([
             'plateforme' => 'Nintendo Switch'
@@ -94,7 +104,7 @@ function getjeu($db,$ie){
         $dataed = $queryed->fetchAll(PDO::FETCH_ASSOC);
         return $dataed;
     } elseif ($ie === 'Pc') {
-        $sqled = "SELECT * FROM jeu LEFT JOIN edition ON jeu.edition_id = edition.id LEFT JOIN plateforme ON jeu.plateforme_id = plateforme.id WHERE plateforme.nom = :plateforme";
+        $sqled = "SELECT jeu.id as jeu_id, jeu.etat, jeu.prix,jeu.edition_id, jeu.vendeur_id, jeu.description, jeu.plateforme_id, jeu.support_id, edition.editeur, edition.pegi, edition.img_p, edition.description, edition.img_g, edition.categorie_id, plateforme.nom FROM jeu LEFT JOIN edition ON jeu.edition_id = edition.id LEFT JOIN plateforme ON jeu.plateforme_id = plateforme.id WHERE plateforme.nom = :plateforme";
         $queryed = $db->getPDO()->prepare($sqled);
         $queryed->execute([
             'plateforme' => 'Pc'
