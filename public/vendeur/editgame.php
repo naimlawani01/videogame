@@ -6,6 +6,14 @@ use App\Database;
 
 $db = new Database('videogame'); 
 require '../../app/controllers/DashbordController.php';
+require('../../app/controllers/editgamecontroller.php');
+$title = 'Inscription';
+$ide = $_GET['id'];
+$edition = getjeumarc($db,$ide);
+$platforme = getplt($db);
+$support = getsupt($db);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +23,8 @@ require '../../app/controllers/DashbordController.php';
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title></title>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>AdminLTE 3 | Dashboard 3</title>
     <!-- Theme style -->
     <link rel="stylesheet" href="../css/adminlte.min.css">
 </head>
@@ -39,7 +48,7 @@ require '../../app/controllers/DashbordController.php';
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="../index.php" class="nav-link">Home</a>
+                    <a href="index3.html" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="#" class="nav-link">Contact</a>
@@ -53,7 +62,7 @@ require '../../app/controllers/DashbordController.php';
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link">
                 <!-- <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> -->
-                <span class="brand-text font-weight-light">Video Game</span>
+                <span class="brand-text font-weight-light">AdminLTE 3</span>
             </a>
 
             <!-- Sidebar -->
@@ -99,15 +108,7 @@ require '../../app/controllers/DashbordController.php';
             <div class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1 class="m-0">Ajouter un jeux</h1>
-                        </div>
                         <!-- /.col -->
-                        <div class="col-sm-6">
-                            <ol class="float-sm-right">
-                                <a name="" id="" class="btn btn-primary" href="addgame.php" role="button"><i class="fa fa-plus fa-" aria-hidden="true"></i> Ajouter un jeu</a>
-                            </ol>
-                        </div>
                         <!-- /.col -->
                     </div>
                     <!-- /.row -->
@@ -119,33 +120,61 @@ require '../../app/controllers/DashbordController.php';
             <!-- Main content -->
             <div class="content">
                 <div class="container-fluid">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Nom </th>
-                                <th>Catégorie</th>
-                                <th>Etat</th>
-                                <th>Prix</th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach($games as $game):?>
-                            <tr>
-                                <td scope="row"></td>
-                                <td><?=$game['editeur']?></td>
-                                <td><?=$game['categorie']?></td>
-                                <td><?=$game['etat']?></td>
-                                <td><?=$game['prix']?><strong>€</strong> </td>
-                                <td><a name="" id="" class="btn btn-warning" href="editgame.php?id=<?= $game['jeu_id'] ?>" role="button">Modifier</a></td>
-                                <td><a name="" id="" class="btn btn-danger" href="deletegame.php?id=<?= $game['jeu_id'] ?>" role="button">Supprimer</a></td>
-                            </tr>
-                            <?php endforeach; ?>
-                          
-                        </tbody>
-                    </table>
+                <h1>Modifie ton jeu <?= $edition[0]['editeur'] ?></h1>
+                <form action="" id="formulaire" method="post">
+                    
+                    <div id="formulairejeu">
+
+                        <div style="display: flex;flex-direction:column">
+                            <label for="edition">Edition</label>
+                            <select name="edition" id="roleis">
+                                <?php foreach ($edition as $editu) { ?>
+                                    <option value="<?= $editu['id'] ?>"><?= $editu['editeur'] ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+
+                        <div style="display: flex;flex-direction:column">
+                            <label for="plateforme">Plateforme</label>
+                            <select name="plateforme" id="roleis">
+                                <?php foreach ($platforme as $platu) { ?>
+                                    <option value="<?= $platu['id'] ?>"><?= $platu['nom'] ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+
+                        <div style="display: flex;flex-direction:column">
+                            <label for="support">Support</label>
+                            <select name="support" id="roleis">
+                                <?php foreach ($support as $suptu) { ?>
+                                    <option value="<?= $suptu['id'] ?>"><?= $suptu['nom'] ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+
+                        <div style="display: flex;flex-direction:column">
+                            <label for="etat">Etat</label>
+                            <select name="etat" id="roleis">
+                                <option value="Neuf">Neuf</option>
+                                <option value="Bon">Bon</option>
+                                <option value="Mauvais">Mauvais</option>
+                            </select>
+                        </div>
+                        
+                        <div style="display: flex;flex-direction:column">
+                            <label for="prix">Prix</label>
+                            <input name="prix" type="number" style="width: 100%;height:46px;border:0px">
+                        </div>
+
+                        <div style="display: flex;flex-direction:column">
+                            <label for="description">Description</label>
+                            <input name="description" type="text" style="width: 100%;height:100px;border:0px">
+                        </div>
+                        <div>
+                            <input type="submit" value="Ajouter le jeu" id="submit">
+                        </div>
+                    </div>
+                </form>
                 </div>
                 <!-- /.container-fluid -->
             </div>

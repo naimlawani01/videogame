@@ -536,7 +536,7 @@ main {
     flex-direction: column;
     width: 40%;
     background-color: #F7F7F7;
-    padding: 2% 3%;
+    padding: 2% 2%;
 }
 
 #btnje {
@@ -1191,5 +1191,73 @@ button {
         color: white;
         font-size: 20px;
         font-weight: 600;
+    }
+}
+
+#aftjgrid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 17% 17% 17% 17% 17%;
+    grid-column-gap: 3.1%;
+    grid-row-gap: 2%;
+}
+
+#card1grid {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #F7F7F7;
+    padding: 6%;
+    justify-content: space-between;
+}
+
+#btnjegrid {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    background-color: #5622ED;
+    padding: 6% 13%;
+    color: white;
+    border-radius: 4px;
+}
+
+@media screen and (max-width: 1080px) {
+    #aftjgrid {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 21% 21% 21% 21%;
+        grid-column-gap: 4.1%;
+        grid-row-gap: 2%;
+    }
+}
+
+@media screen and (max-width: 889px) {
+    #aftjgrid {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 27% 27% 27%;
+        grid-column-gap: 5.1%;
+        grid-row-gap: 1%;
+    }
+}
+
+@media screen and (max-width: 693px) {
+    #aftjgrid {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 45% 45%;
+        grid-column-gap: 7.1%;
+        grid-row-gap: 1%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    #aftjgrid {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 90%;
+        grid-column-gap: 7.1%;
+        grid-row-gap: 1%;
     }
 }

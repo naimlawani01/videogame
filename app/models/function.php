@@ -37,7 +37,7 @@ function getUser($userId, $db){
     return $user;
 }
 function getSellerGame($userId, $db){
-    $req = "SELECT * FROM jeu INNER JOIN edition ON jeu.edition_id = edition.id INNER JOIN categorie ON categorie.id = edition.categorie_id WHERE vendeur_id = :userId";
+    $req = "SELECT jeu.id as jeu_id, jeu.etat, jeu.prix, jeu.description, jeu.edition_id, jeu.vendeur_id, jeu.plateforme_id, jeu.support_id, edition.editeur, edition.pegi, edition.img_p, edition.description, edition.img_g, edition.categorie_id, categorie.categorie FROM jeu INNER JOIN edition ON jeu.edition_id = edition.id INNER JOIN categorie ON categorie.id = edition.categorie_id WHERE vendeur_id = :userId";
     $stmt = $db->getPDO()->prepare($req);
 
     $stmt->execute([
@@ -50,6 +50,15 @@ function getedition($db){
     $sqled = 'SELECT * FROM edition ORDER BY id DESC';
     $queryed = $db->getPDO()->prepare($sqled);
     $queryed->execute();
+    $dataed = $queryed->fetchAll(PDO::FETCH_ASSOC);
+    return $dataed;
+}
+function geteditionupd($db,$ide){
+    $sqled = 'SELECT * FROM edition WHERE jeu.id = :ide';
+    $queryed = $db->getPDO()->prepare($sqled);
+    $queryed->execute([
+        'ide' => $ide
+    ]);
     $dataed = $queryed->fetchAll(PDO::FETCH_ASSOC);
     return $dataed;
 }
