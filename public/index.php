@@ -6,13 +6,14 @@
 ?>
 <body style="background-color: #FFFFFF;">
 <main style="background-color:#FFFFFF;margin: 0 10%">
+    <hr>
     <?php if (isConnected() === true) { ?>
     <div id="dvhh">
         <div>
-            <h1>Bienvenue de retour parmis nous !</h1>
+            <h1>Bienvenue de retour parmi nous !</h1>
             <h3>Commence à vendre tes premiers Jeux Vidéos ou Consoles</h3>
         </div>
-        <button id="butdm">Devenir vendeur</button>
+        <button onclick="window.location.href = 'vendeur/addgame.php';" id="butdm">Vendre un jeu</button>
     </div>
     <?php } else { ?>
         <div id="dvhh">
@@ -20,36 +21,36 @@
                 <h1>Deviens membre de notre communauté !</h1>
                 <h3>Inscris toi pour pouvoir commencer à vendre tes premiers Jeux Vidéos ou Consoles</h3>
             </div>
-            <button id="butdm">Vendre un jeu</button>
+            <a href="register.php"><button id="butdm">Vendre un jeu</button></a>
         </div>
     <?php } ?>
     <h1 id="hddhdhd">Achetez au meilleur Prix</h1>
     <div id="dvlog">
-        <div id="dvlos">
+        <div id="dvlos" onclick="window.location.href = 'archive.php?plateforme=xbox';" style="cursor: pointer;">
             <img style=" width:35%;margin:auto" src="img/1280px-XBOX_logo_2012 2.png" alt="">
             <div id="vpls">
                 <p>Voir les jeux Xbox</p>
                 <img id="imrd" src="img/Arrow 9.png" alt="">
             </div>
         </div>
-        <div id="dvlos">
+        <div id="dvlos" onclick="window.location.href = 'archive.php?plateforme=playstation';" style="cursor: pointer;">
             <img style=" width:35%;margin:auto" src="img/1280px-PlayStation_logo 1.png" alt="">
             <div id="vpls">
-                <p>Voir les jeux Xbox</p>
+                <p>Voir les jeux Playstation</p>
                 <img id="imrd" src="img/Arrow 9.png" alt="">
             </div>
         </div>
-        <div id="dvlos">
+        <div id="dvlos" onclick="window.location.href = 'archive.php?plateforme=pc';" style="cursor: pointer;">
             <img style=" width:35%;margin:auto" src="img/PC.png" alt="">
             <div id="vpls">
-                <p>Voir les jeux Xbox</p>
+                <p>Voir les jeux Pc</p>
                 <img id="imrd" src="img/Arrow 9.png" alt="">
             </div>
         </div>
-        <div id="dvlos">
+        <div id="dvlos" onclick="window.location.href = 'archive.php?plateforme=nintendo';" style="cursor: pointer;">
             <img style=" width:35%;margin:auto" src="img/Nintendo-Logo-1970-1975 2.png" alt="">
             <div id="vpls">
-                <p>Voir les jeux Xbox</p>
+                <p>Voir les jeux Nintendo</p>
                 <img id="imrd" src="img/Arrow 9.png" alt="">
             </div>
         </div>
@@ -106,7 +107,7 @@
             </div>
         <?php // }?>
     </div>
-    <h2 id="hds">Top jeux du moment</h2>
+    <h1 id="hds">Top jeux du moment</h1>
     <div id="aftj">
             <?php  for( $i= 0 ;$i < 4; $i++ ) { ?>
                 <div id="card1">

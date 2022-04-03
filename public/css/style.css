@@ -5,12 +5,63 @@ header {
     background-color: #FFFFFF;
     margin: 0px;
     width: 100%;
+    margin-top: 2%;
 }
 
 #gridbody {
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 100px 540px 250px;
+}
+
+#navpp {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100px;
+    margin-top: 30px;
+    margin: 0 10%;
+}
+
+#navha {
+    width: 95%;
+    justify-content: center;
+    display: flex;
+    padding: 0 2%;
+    height: 52px;
+}
+
+#navhaform {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    margin: 0PX 10%;
+}
+
+#navmob {
+    display: none;
+}
+
+@media screen AND (max-width: 929px) {
+    #navpp {
+        display: none;
+    }
+    #navmob {
+        width: 95%;
+        display: flex;
+    }
+    #navhaform {
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        margin: 0PX 10%;
+        gap: 8%;
+    }
+    #navmob {
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 #formulaire {
@@ -147,6 +198,17 @@ h3 {
     width: 136px;
     height: 44px;
     background-color: #ffffff;
+}
+
+hr {
+    margin-top: 2%;
+    color: #EDEDED;
+    size: 1px;
+}
+
+ul>a {
+    text-decoration: none;
+    color: #000000;
 }
 
 #imgfb {
@@ -479,6 +541,7 @@ main {
 
 #btnje {
     display: flex;
+    cursor: pointer;
     align-items: center;
     justify-content: center;
     background-color: #5622ED;
@@ -879,6 +942,7 @@ main>h1 {
     }
     #btnje {
         display: flex;
+        cursor: pointer;
         align-items: center;
         justify-content: center;
         background-color: #5622ED;
@@ -1070,6 +1134,10 @@ main>h1 {
     padding: 0px 4%;
     background-color: #F7F7F7;
     border-radius: 10px;
+}
+
+button {
+    cursor: pointer;
 }
 
 @media screen and (max-width: 928px) {

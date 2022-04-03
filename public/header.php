@@ -17,61 +17,54 @@ $db = new Database('videogame');
 </head>
 <body>
 <header>
-    <div class="dropdown">
-        <button><a href="index.php" class="home">HOME</a></button>
-        <div class="xbox">
-            <button >XBOX</button>
-            <ul class="liste">
-                <li><a href="#">Consoles</a></li>
-                <li><a href="#">Jeux PS5</a></li>
-                <li><a href="#">Jeux PS4</a></li>
-                <li><a href="#">Jeux PS3</a></li>
-                <li><a href="#">Cartes PSN</a></li>
-            </ul>
+    <div id="navpp">
+        <div id="navha">
+            <div id="navhaform">
+                <form action="" method="get" style="width: 100%;display: flex;height: 52px;">
+                    <input style="width: 100%;margin: 0px;border: none;background-color: #EDEDED;" type="text">
+                    <button style="height: 100%;margin: 0px;border: none;background-color: #D2D2D2;" type="submit"><img src="img/akar-icons_search.png" alt=""></button>
+                </form>
+            </div>
+            <div style="padding: 1%;">
+                <?php if(isConnected()): ?>
+                    <a href="vendeur/dashboard.php"><img style="height: 100%;" src="img/noun-account-4110328 1.png" alt=""></a>
+                <?php else: ?>
+                    <a href="/register"><img style="height: 100%;" src="img/noun-account-4110328 1.png" alt=""></a>
+                <?php endif; ?>
+                <img style="height: 100%;" src="img/noun-buy-4716653 3.png" alt="">
+                <img style="height: 100%;" src="img/noun-heart-4714219 1.png" alt="">
+            </div>
         </div>
-        <div class="playstation">
-            <button>PLAYSTATION</button>
-            <ul class="liste">
-                <li><a href="#">Consoles</a></li>
-                <li><a href="#">Jeux Xbox Series</a></li>
-                <li><a href="#">Jeux Xbox One</a></li>
-                <li><a href="#">Jeux Xbox 360</a></li>
-                <li><a href="#">Cartes Microsoft</a></li>
-            </ul>
-        </div>
-        <div class="nintendo">
-            <button>NINTENDO</button>
-            <ul class="liste">
-                <li><a href="#">Consoles</a></li>
-                <li><a href="#">Jeux Nintendo Switch</a></li>
-                <li><a href="#">Jeux DS</a></li>
-                <li><a href="#">Jeux Wii U</a></li>
-            </ul>
-        </div>
-        <div class="pc">
-            <button>PC</button>
-            <ul class="liste">
-                <li><a href="#">PC Portables</a></li>
-                <li><a href="#">Tours</a></li>
-                <li><a href="#">Clés PC</a></li>
+        <div style="margin: 2% 0px;">
+            <ul style="list-style: none;display:flex;gap:2%">
+                <a href="index.php"><li>Home</li></a>
+                <a href="archive.php?platedorme=xbox"><li>Xbox</li></a>
+                <a href="archive.php?platedorme=Playstation"><li>Playstation</li></a>
+                <a href="archive.php?platedorme=Pc"><li>Pc</li></a>
+                <a href="archive.php?platedorme=Nintendo"><li>Nintendo</li></a>
             </ul>
         </div>
     </div>
-    <?php if(isConnected()): ?>
-    <div id="connectregister">
-        <div class="divconnect">
-            <a href="vendeur/dashboard.php"> <i class="fa fa-user-circle fa-1x" aria-hidden="true"></i> <?php $user= getUser($_SESSION['userid'], $db); ?><?=$user['mail']?></a>
+    <div id="navmob">
+        <div id="navhaform">
+            <form action="" method="get" style="width: 100%;display: flex;height: 52px;">
+                <input style="width: 100%;margin: 0px;border: none;background-color: #EDEDED;" type="text">
+                <button style="height: 100%;margin: 0px;border: none;background-color: #D2D2D2;" type="submit"><img src="img/akar-icons_search.png" alt=""></button>
+            </form>
+        <?php if(isConnected()): ?>
+            <a href="vendeur/dashboard.php"><img style="height: 100%;" src="img/noun-account-4110328 1.png" alt=""></a>
+        <?php else: ?>
+            <a href="/register"><img style="height: 100%;" src="img/noun-account-4110328 1.png" alt=""></a>
+        <?php endif; ?>
         </div>
-
+        <div style="margin: 2% 0px;">
+            <ul style="list-style: none;display:flex;gap:2%">
+                <a href=""><li>Home</li></a>
+                <a href=""><li>Xbox</li></a>
+                <a href=""><li>Playstation</li></a>
+                <a href=""><li>Pc</li></a>
+                <a href=""><li>Nintendo</li></a>
+            </ul>
+        </div>
     </div>
-    <?php else: ?>
-    <div id="connectregister">
-        <div class="divconnect">
-        <a href="/register"> S'inscrire</a>
-        </div>
-        <div class="divconnect">
-            <a href="/login">Se Connecter</a> 
-        </div>
-    </div>
-    <?php endif; ?>
 </header>

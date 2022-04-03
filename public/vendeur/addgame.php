@@ -165,7 +165,7 @@ $support = getsupt($db);
                         </div>
 
                         <div style="display: flex;flex-direction:column">
-                            <label for="description">Pescription</label>
+                            <label for="description">Description</label>
                             <input name="description" type="text" style="width: 100%;height:100px;border:0px">
                         </div>
                         <div>
