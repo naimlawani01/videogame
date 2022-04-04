@@ -37,7 +37,7 @@ $user =getUser($userId, $db);
                         <a href="client/dashboard.php"><img style="height: 100%;" src="img/noun-account-4110328 1.png" alt=""></a>
                     <?php endif;?>
                 <?php else: ?>
-                    <a href="/register"><img style="height: 100%;" src="img/noun-account-4110328 1.png" alt=""></a>
+                    <a href="register.php"><img style="height: 100%;" src="img/noun-account-4110328 1.png" alt=""></a>
                 <?php endif; ?>
                 <img style="height: 100%;" src="img/noun-buy-4716653 3.png" alt="">
                 <img style="height: 100%;" src="img/noun-heart-4714219 1.png" alt="">
