@@ -41,9 +41,6 @@ require '../../app/controllers/DashbordController.php';
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="../index.php" class="nav-link">Home</a>
                 </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Contact</a>
-                </li>
             </ul>
         </nav>
         <!-- /.navbar -->
@@ -85,7 +82,6 @@ require '../../app/controllers/DashbordController.php';
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-header">EXAMPLES</li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -155,7 +151,7 @@ require '../../app/controllers/DashbordController.php';
 
         <!-- Main Footer -->
         <footer class="main-footer">
-            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+            <strong>Copyright &copy;2022 <a href="">NAIM LAWANI ET MARC DEVY</a>.</strong> All rights reserved.
             <div class="float-right d-none d-sm-inline-block">
                 <b>Version</b> 3.2.0
             </div>
