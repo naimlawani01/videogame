@@ -76,41 +76,32 @@ require '../../app/controllers/AddCategorieController.php';
                with font-awesome or any other icon font library -->
                         <li class="nav-item menu-open">
                             <a href="dashboard.php" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Edition 
-                                    <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item menu-open">
                             <a href="categorie.php" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Categorie
-                                    <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item menu-open">
                             <a href="plateforme.php" class="nav-link ">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Plateforme
-                                    <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item menu-open">
                             <a href="support.php" class="nav-link active">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Support
-                                    <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-header">EXAMPLES</li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
