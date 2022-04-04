@@ -52,9 +52,9 @@ $db = new Database('videogame');
                 <button style="height: 100%;margin: 0px;border: none;background-color: #D2D2D2;" type="submit"><img src="img/akar-icons_search.png" alt=""></button>
             </form>
         <?php if(isConnected()): ?>
-            <a href="vendeur/dashboard.php"><img style="height: 100%;" src="img/noun-account-4110328 1.png" alt=""></a>
+            <a style="padding: 2%;" href="vendeur/dashboard.php"><img style="height: 100%;" src="img/noun-account-4110328 1.png" alt=""></a>
         <?php else: ?>
-            <a href="/register"><img style="height: 100%;" src="img/noun-account-4110328 1.png" alt=""></a>
+            <a style="padding: 2%;" href="/register"><img style="height: 100%;" src="img/noun-account-4110328 1.png" alt=""></a>
         <?php endif; ?>
         </div>
         <div style="margin: 2% 0px;">
