@@ -38,10 +38,10 @@ $db = new Database('videogame');
         <div style="margin: 2% 0px;">
             <ul style="list-style: none;display:flex;gap:2%">
                 <a href="index.php"><li>Home</li></a>
-                <a href="archive.php?platedorme=xbox"><li>Xbox</li></a>
-                <a href="archive.php?platedorme=Playstation"><li>Playstation</li></a>
-                <a href="archive.php?platedorme=Pc"><li>Pc</li></a>
-                <a href="archive.php?platedorme=Nintendo"><li>Nintendo</li></a>
+                <a href="archive.php?plateforme=Xbox"><li>Xbox</li></a>
+                <a href="archive.php?plateforme=Playstation"><li>Playstation</li></a>
+                <a href="archive.php?plateforme=Pc"><li>Pc</li></a>
+                <a href="archive.php?plateforme=Nintendo"><li>Nintendo</li></a>
             </ul>
         </div>
     </div>
@@ -59,11 +59,11 @@ $db = new Database('videogame');
         </div>
         <div style="margin: 2% 0px;">
             <ul style="list-style: none;display:flex;gap:2%">
-                <a href=""><li>Home</li></a>
-                <a href=""><li>Xbox</li></a>
-                <a href=""><li>Playstation</li></a>
-                <a href=""><li>Pc</li></a>
-                <a href=""><li>Nintendo</li></a>
+                <a href="index.php"><li>Home</li></a>
+                <a href="archive.php?plateforme=Xbox"><li>Xbox</li></a>
+                <a href="archive.php?plateforme=Playstation"><li>Playstation</li></a>
+                <a href="archive.php?plateforme=Pc"><li>Pc</li></a>
+                <a href="archive.php?plateforme=Nintendo"><li>Nintendo</li></a>
             </ul>
         </div>
     </div>

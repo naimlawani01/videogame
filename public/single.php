@@ -4,9 +4,10 @@
     require 'header.php'; 
     $jeuid = $_GET['id'];
     $jeux = getjeumarc($db,$jeuid);
+    $edition = getedition($db);
 ?>
 <body style="background-color: white;">
-<main style="background-color: white;">
+<main style="background-color: white;margin-top:50px">
     <div id="dv1a">
         <?php foreach ($jeux as $jeu) { ?>
         <div id="dvha1"><img style="width: 100%;" src="<?= $jeu['img_g'] ?>" alt=""></div>
@@ -76,12 +77,12 @@
     <div id="aftj">
             <?php  for( $i= 0 ;$i < 5; $i++ ) { ?>
                 <div id="card1">
-                    <div style="width: 100%;"><img width="100%" src="img/img.png" alt=""></div>
+                    <div style="width: 100%;"><img width="100%" src=<?= $edition[$i]['img_p'] ?> alt=""></div>
                     <div id="detj">
-                        <h4 style="margin: 3%;">Grand Theft Auto</h4>
-                        <p style="margin: 0 3%;">A partir de </p>
+                        <h4 style="margin: 3%;"><?= $edition[$i]['editeur'] ?></h4>
+                        <p style="margin: 0 3%;"><?php echo substr($edition[$i]['description'], 0, 45).'...'; ?></p>
                     </div>
-                    <div id="btnje"><h4 style="margin: 3%;">Voir les articles</h4></div>
+                    <a href="archive_edition.php?id=<?= $edition[$i]['id']?>"><div id="btnje"><h4 style="margin: 3%;">Voir l'article</h4></div></a>
                 </div>
             <?php }?>
         </div>
