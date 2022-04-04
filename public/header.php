@@ -3,8 +3,11 @@ require '../vendor/autoload.php';
 require '../app/models/function.php';
 use App\Database;
 $db = new Database('videogame');
-$userId= $_SESSION['userid'];
-$user =getUser($userId, $db);
+if(isConnected()){
+
+    $userId= $_SESSION['userid'];
+    $user =getUser($userId, $db);
+}
 
 ?>
 <!DOCTYPE html>

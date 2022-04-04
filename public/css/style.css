@@ -72,6 +72,14 @@ header {
     outline: none;
 }
 
+.formulaire {
+    display: grid;
+    gap: 14px;
+    margin: 0 auto;
+    margin-top: 20px;
+    outline: none;
+}
+
 #formulairejeu {
     display: grid;
     gap: 14px;
