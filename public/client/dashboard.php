@@ -5,7 +5,7 @@ require '../../app/models/function.php';
 use App\Database;
 
 $db = new Database('videogame'); 
-require '../../app/controllers/CategorieController.php';
+require '../../app/controllers/DashborduserController.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +18,6 @@ require '../../app/controllers/CategorieController.php';
     <title></title>
     <!-- Theme style -->
     <link rel="stylesheet" href="../css/adminlte.min.css">
-    <link rel="stylesheet" href="../css/style.css">
 </head>
 <!--
 `body` tag options:
@@ -58,8 +57,8 @@ require '../../app/controllers/CategorieController.php';
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div style="color: white;" class="image">
-                        <i class="fa fa-user-circle fa-2x" aria-hidden="true"></i>
+                    <div class="image">
+                        <i class="fa fa-user-circle" aria-hidden="true"></i>
                     </div>
                     <div class="info">
                         <a href="#" class="d-block"><?=$user['nom']?></a>
@@ -75,31 +74,11 @@ require '../../app/controllers/CategorieController.php';
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item menu-open">
-                            <a href="dashboard.php" class="nav-link ">
+                            <a href="dashboard.php" class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
-                                    Edition 
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item menu-open">
-                            <a href="categorie.php" class="nav-link active">
-                                <p>
-                                    Categorie
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item menu-open">
-                            <a href="plateforme.php" class="nav-link ">
-                                <p>
-                                    Plateforme
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item menu-open">
-                            <a href="support.php" class="nav-link ">
-                                <p>
-                                    Support
+                                    Informations
+                                    <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
                         </li>
@@ -117,13 +96,7 @@ require '../../app/controllers/CategorieController.php';
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Categorie jeux</h1>
-                        </div>
-                        <!-- /.col -->
-                        <div class="col-sm-6">
-                            <ol class="float-sm-right">
-                                <a name="" id="" class="btn btn-primary" href="addcategorie.php" role="button"><i class="fa fa-plus fa-" aria-hidden="true"></i> Ajouter une categorie</a>
-                            </ol>
+                            <h1 class="m-0">Tes informations</h1>
                         </div>
                         <!-- /.col -->
                     </div>
@@ -135,28 +108,11 @@ require '../../app/controllers/CategorieController.php';
 
             <!-- Main content -->
             <div class="content">
-                <div class="container-fluid">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Nom </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach($categories as $categorie):?>
-                            <tr>
-                                <td scope="row"><img height="65px"  src="<?=$categorie['img_p']?>" alt=""></td>
-                                <td><?=$categorie['categorie']?></td>
-                                <td><a name="" id="" class="btn btn-warning" href="updatecategorie.php?categorie=<?=$categorie['id']?>" role="button">Modifier</a></td>
-                                <td><a name="" id="" class="btn btn-danger" href="deletecategorie.php?categorie=<?=$categorie['id']?>" role="button">Supprimer</a></td>
-                            </tr>
-                            <?php endforeach; ?>
-                          
-                        </tbody>
-                    </table>
+                <div style="margin: 0px 20%">
+                    <h4 >Ton nom : <?= $inform[0]['nom'] ?> </h4>
+                    <h4>Ton prenom : <?= $inform[0]['prenom'] ?> </h4>
+                    <h4>Ton mail : <?= $inform[0]['mail'] ?> </h4>
                 </div>
-                <!-- /.container-fluid -->
             </div>
             <!-- /.content -->
         </div>
@@ -164,7 +120,7 @@ require '../../app/controllers/CategorieController.php';
 
         <!-- Main Footer -->
         <footer class="main-footer">
-            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+            <strong>Copyright &copy;2022 <a href="">NAIM LAWANI ET MARC DEVY</a>.</strong> All rights reserved.
             <div class="float-right d-none d-sm-inline-block">
                 <b>Version</b> 3.2.0
             </div>

@@ -427,3 +427,11 @@ function updateSupport($db, $datas){
     $stmt = $db->getPDO()->prepare("UPDATE support SET nom=:nom WHERE id=:idSupport");
     return $stmt->execute($datas);
 }
+function getuserinf($db, $userid){
+    $stmt = $db->getPDO()->prepare('SELECT * FROM utilisateur WHERE utilisateur.id = :userid');
+    $stmt->execute([
+        'userid' => $userid
+    ]);
+    $datas= $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $datas;
+}

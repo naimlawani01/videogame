@@ -116,7 +116,7 @@ require '../../app/controllers/AddEditionController.php';
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Ajouter un jeux</h1>
+                            <h1 class="m-0">Ajouter une edition</h1>
                         </div>
                         <!-- /.col -->
                         <div class="col-sm-6">

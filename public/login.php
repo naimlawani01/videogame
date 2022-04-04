@@ -1,13 +1,31 @@
 <?php
-    session_start();
-    $title = 'Connexion';
-    require 'header.php';
+session_start();
+$title = 'Inscription';
+
+
+require '../vendor/autoload.php';
+require '../app/models/function.php';
+use App\Database;
+$db = new Database('videogame'); 
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title><?= $title?></title>
+</head>
+<body>
+<?php
     require('../app/controllers/LoginController.php');
 
 ?>
 
     <div id="formulaire">
-        <h1>Bienvenue de retour parmis nous !</h1>
+        <h1>Bienvenue de retour parmi nous !</h1>
         <?php if(isset($error) && $error!=null ) { ?>
             <div id="erreurformulaireC">
                 <p style="color: white;"><?=$error?></p>
@@ -46,8 +64,7 @@
             <div id="fbgoogle">
                 <div class="squarefbgoogle">
     
-                    <img id="imgfb2" src="img/
-                    Facebook-logo.png" alt="fb"  >
+                    <img id="imgfb2" src="img/Facebook-logo.png" alt="fb"  >
                     
                 </div>
                 <div class="squarefbgoogle">
