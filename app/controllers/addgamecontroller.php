@@ -1,5 +1,12 @@
 <?php
-
+/**
+* Ce fichier fait partie du projet VIDEOGAME.
+*
+* Permet d'ajouter un jeu
+*
+* @package NAIM/MARC
+* @copyright 2022
+*/
 if(
     isset($_POST['edition']) && 
     isset($_POST['plateforme']) && 

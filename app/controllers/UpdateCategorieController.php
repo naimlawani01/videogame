@@ -1,4 +1,12 @@
 <?php 
+/**
+* Ce fichier fait partie du projet VIDEOGAME.
+*
+* Permet de modifier une categorie et redirige si l'utilisateur n'est pas connecté
+*
+* @package NAIM/MARC
+* @copyright 2022
+*/
 if(!isConnected()){
     header('location: index.php');
 }
