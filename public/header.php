@@ -1,9 +1,11 @@
 <?php
-
 require '../vendor/autoload.php';
 require '../app/models/function.php';
 use App\Database;
-$db = new Database('videogame'); 
+$db = new Database('videogame');
+$userId= $_SESSION['userid'];
+$user =getUser($userId, $db);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +29,13 @@ $db = new Database('videogame');
             </div>
             <div style="padding: 1%;">
                 <?php if(isConnected()): ?>
+                    <?php if($user['role_id']==2):?>
                     <a href="vendeur/dashboard.php"><img style="height: 100%;" src="img/noun-account-4110328 1.png" alt=""></a>
+                    <?php elseif($user['role_id']==3):?>
+                        <a href="admin/dashboard.php"><img style="height: 100%;" src="img/noun-account-4110328 1.png" alt=""></a>
+                    <?php elseif($user['role_id']==1):?>
+                        <a href="client/dashboard.php"><img style="height: 100%;" src="img/noun-account-4110328 1.png" alt=""></a>
+                    <?php endif;?>
                 <?php else: ?>
                     <a href="/register"><img style="height: 100%;" src="img/noun-account-4110328 1.png" alt=""></a>
                 <?php endif; ?>
@@ -52,9 +60,10 @@ $db = new Database('videogame');
                 <button style="height: 100%;margin: 0px;border: none;background-color: #D2D2D2;" type="submit"><img src="img/akar-icons_search.png" alt=""></button>
             </form>
         <?php if(isConnected()): ?>
+
             <a style="padding: 2%;" href="vendeur/dashboard.php"><img style="height: 100%;" src="img/noun-account-4110328 1.png" alt=""></a>
         <?php else: ?>
-            <a style="padding: 2%;" href="/register"><img style="height: 100%;" src="img/noun-account-4110328 1.png" alt=""></a>
+            <a style="padding: 2%;" href="login.php"><img style="height: 100%;" src="img/noun-account-4110328 1.png" alt=""></a>
         <?php endif; ?>
         </div>
         <div style="margin: 2% 0px;">
