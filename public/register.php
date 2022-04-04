@@ -23,7 +23,7 @@ $db = new Database('videogame');
 require('../app/controllers/RegisterController.php');
     
 ?>
-
+<a href="index.php"><img style="height: 50px;margin: 0% 3%" src="img/bi_arrow-down-circle.png" alt=""></a>
 
 <h1>Heureux de pouvoir bientôt vous compter parmi nous !</h1>
 

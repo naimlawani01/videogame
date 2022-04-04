@@ -23,7 +23,7 @@ $db = new Database('videogame');
     require('../app/controllers/LoginController.php');
 
 ?>
-
+<a href="index.php"><img style="height: 50px;margin: 0% 3%" src="img/bi_arrow-down-circle.png" alt=""></a>
     <div id="formulaire">
         <h1>Bienvenue de retour parmi nous !</h1>
         <?php if(isset($error) && $error!=null ) { ?>
