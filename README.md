@@ -2,11 +2,11 @@
 Vente de jeu vidéo
 
 
-#Nom de la base de donnée 
+# Nom de la base de donnée 
 videogame
 
-#Instalition du projet 
-##Run 
+# Instalition du projet 
+## Run 
 compposer update
 composer install
 composer dump-autoload
