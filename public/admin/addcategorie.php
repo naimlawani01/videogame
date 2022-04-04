@@ -96,7 +96,7 @@ require '../../app/controllers/AddCategorieController.php';
                             </a>
                         </li>
                         <li class="nav-item menu-open">
-                            <a href="platforme.php" class="nav-link ">
+                            <a href="plateforme.php" class="nav-link ">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Plateforme

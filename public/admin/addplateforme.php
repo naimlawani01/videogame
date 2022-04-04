@@ -113,7 +113,6 @@ require '../../app/controllers/AddPlateformeController.php';
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-header">EXAMPLES</li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

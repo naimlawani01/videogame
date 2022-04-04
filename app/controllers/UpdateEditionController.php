@@ -42,8 +42,6 @@ if(isset($_POST['editeur']) && isset($_POST['pegi']) &&
                     "categorie_id" => intval($categorie)
         
                 ];
-                var_dump($datas);
-                die();
                 if(updateEdition($db, $datas)) $message = "Modification effectuée";
             }else{
                 $message= "Extension Invalide";
@@ -62,10 +60,7 @@ if(isset($_POST['editeur']) && isset($_POST['pegi']) &&
     
             ];
                 
-            #if(updateEdition($db, $datas)) $message = "Modification effectuée";
-
-            var_dump(updateEdition($db, $datas));
-
+            if(updateEdition($db, $datas)) $message = "Modification effectuée";
         }
 
         

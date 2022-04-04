@@ -172,3 +172,58 @@ function updateEdition($db, $data){
     $stmt = $db->getPDO()->prepare("UPDATE edition SET editeur=:editeur, pegi=:pegi, img_p=:img_p, description= :description, img_g =:img_g, categorie_id = :categorie_id WHERE id=:idEdition");
     return $stmt->execute($data);
 }
+
+function showCategorie($db, $idCategorie){
+    $sqled = 'SELECT * FROM categorie WHERE  id= :idCategorie';
+    $queryed = $db->getPDO()->prepare($sqled);
+    $queryed->execute([
+        'idCategorie' => $idCategorie
+    ]);
+    $dataeds = $queryed->fetch(PDO::FETCH_ASSOC);
+    return $dataeds;
+}
+
+function updateCategorie($db, $datas){
+    $stmt = $db->getPDO()->prepare("UPDATE categorie SET categorie=:categorie WHERE id=:idCategorie");
+    return $stmt->execute($datas);
+}
+
+function getPlateforme($db){
+    $stmt = $db->getPDO()->prepare('SELECT * FROM plateforme');
+    $stmt->execute();
+    $datas= $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $datas;
+}
+function showPlateforme($db, $idPlateforme){
+    $sqled = 'SELECT * FROM plateforme WHERE  id= :idPlateforme';
+    $queryed = $db->getPDO()->prepare($sqled);
+    $queryed->execute([
+        'idPlateforme' => $idPlateforme
+    ]);
+    $dataeds = $queryed->fetch(PDO::FETCH_ASSOC);
+    return $dataeds;
+}
+function updatePlateforme($db, $datas){
+    $stmt = $db->getPDO()->prepare("UPDATE plateforme SET nom=:nom WHERE id=:idPlateforme");
+    return $stmt->execute($datas);
+}
+
+function getSupport($db){
+    $stmt = $db->getPDO()->prepare('SELECT * FROM support');
+    $stmt->execute();
+    $datas= $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $datas;
+}
+function showSupport($db, $idSupport){
+    $sqled = 'SELECT * FROM support WHERE  id= :idSupport';
+    $queryed = $db->getPDO()->prepare($sqled);
+    $queryed->execute([
+        'idSupport' => $idSupport
+    ]);
+    $dataeds = $queryed->fetch(PDO::FETCH_ASSOC);
+    return $dataeds;
+}
+function updateSupport($db, $datas){
+    $stmt = $db->getPDO()->prepare("UPDATE support SET nom=:nom WHERE id=:idSupport");
+    return $stmt->execute($datas);
+}

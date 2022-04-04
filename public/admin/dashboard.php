@@ -113,7 +113,6 @@ require '../../app/controllers/AdminController.php';
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-header">EXAMPLES</li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -133,7 +132,7 @@ require '../../app/controllers/AdminController.php';
                         <!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="float-sm-right">
-                                <a name="" id="" class="btn btn-primary" href="addedition.php" role="button"><i class="fa fa-plus fa-" aria-hidden="true"></i> Ajouter un Editions</a>
+                                <a name="" id="" class="btn btn-primary" href="addedition.php" role="button"><i class="fa fa-plus fa-" aria-hidden="true"></i> Ajouter une Edition</a>
                             </ol>
                         </div>
                         <!-- /.col -->
@@ -166,7 +165,7 @@ require '../../app/controllers/AdminController.php';
                                 <td><?=$edition['pegi']?></td>
                                 <td><?=$edition['categorie']?></td>
                                 <td><a name="" id="" class="btn btn-warning" href="updateedition.php?edition=<?=$edition['id']?>" role="button">Modifier</a></td>
-                                <td><a name="" id="" class="btn btn-danger" href="#" role="button">Supprimer</a></td>
+                                <td><a name="" id="" class="btn btn-danger" href="deleteedition.php?edition=<?=$edition['id']?>" role="button">Supprimer</a></td>
                             </tr>
                             <?php endforeach; ?>
                           

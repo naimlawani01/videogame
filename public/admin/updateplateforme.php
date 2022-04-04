@@ -5,7 +5,7 @@ require '../../app/models/function.php';
 use App\Database;
 
 $db = new Database('videogame'); 
-require '../../app/controllers/PlateformeController.php';
+require '../../app/controllers/UpdatePlateformeController.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -87,7 +87,7 @@ require '../../app/controllers/PlateformeController.php';
                             </a>
                         </li>
                         <li class="nav-item menu-open">
-                            <a href="categorie.php" class="nav-link">
+                            <a href="categorie.php" class="nav-link ">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Categorie
@@ -127,15 +127,8 @@ require '../../app/controllers/PlateformeController.php';
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Plateforme jeux</h1>
+                            <h1 class="m-0">Modifier une plateforme</h1>
                         </div>
-                        <!-- /.col -->
-                        <div class="col-sm-6">
-                            <ol class="float-sm-right">
-                                <a name="" id="" class="btn btn-primary" href="addplateforme.php" role="button"><i class="fa fa-plus fa-" aria-hidden="true"></i> Ajouter une plateforme</a>
-                            </ol>
-                        </div>
-                        <!-- /.col -->
                     </div>
                     <!-- /.row -->
                 </div>
@@ -146,25 +139,22 @@ require '../../app/controllers/PlateformeController.php';
             <!-- Main content -->
             <div class="content">
                 <div class="container-fluid">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Nom </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach($plateformes as $plateforme):?>
-                            <tr>
-                                <td scope="row"><img height="65px"  src="<?=$plateforme['nom']?>" alt=""></td>
-                                <td><?=$plateforme['nom']?></td>
-                                <td><a name="" id="" class="btn btn-warning" href="updateplateforme.php?plateforme=<?=$plateforme['id']?>" role="button">Modifier</a></td>
-                                <td><a name="" id="" class="btn btn-danger" href="deleteplatforme.php?plateforme=<?=$plateforme['id']?>" role="button">Supprimer</a></td>
-                            </tr>
-                            <?php endforeach; ?>
-                          
-                        </tbody>
-                    </table>
+                    <form action="" id="formulaire" method="post" enctype="multipart/form-data">
+                        <div id="formulairejeu">
+                            <?php if(isset($message) and $message): ?>
+                                <div class="card text-white bg-success py-2">
+                                    <center><?=$message?></center>
+                                </div>
+                            <?php endif; ?>
+                            <div style="display: flex;flex-direction:column">
+                                <label for="plateforme">Nom de la platforme</label>
+                                <input value="<?=$plateforme['nom'] ?>" style="width: 100%;height:46px;border:0px" type="text" name="plateforme" id="plateforme">
+                            </div>
+                            <div>
+                                <input type="submit" value="Modifier la categorie" id="submit">
+                            </div>
+                        </div>
+                    </form>
                 </div>
                 <!-- /.container-fluid -->
             </div>
@@ -173,12 +163,6 @@ require '../../app/controllers/PlateformeController.php';
         <!-- /.content-wrapper -->
 
         <!-- Main Footer -->
-        <footer class="main-footer">
-            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-            <div class="float-right d-none d-sm-inline-block">
-                <b>Version</b> 3.2.0
-            </div>
-        </footer>
     </div>
     <!-- ./wrapper -->
 

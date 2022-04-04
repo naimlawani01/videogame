@@ -5,7 +5,7 @@ require '../../app/models/function.php';
 use App\Database;
 
 $db = new Database('videogame'); 
-require '../../app/controllers/AdminController.php';
+require '../../app/controllers/CategorieController.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -78,7 +78,7 @@ require '../../app/controllers/AdminController.php';
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item menu-open">
-                            <a href="dashboard.php" class="nav-link active">
+                            <a href="dashboard.php" class="nav-link ">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Edition 
@@ -87,7 +87,7 @@ require '../../app/controllers/AdminController.php';
                             </a>
                         </li>
                         <li class="nav-item menu-open">
-                            <a href="categorie.php" class="nav-link">
+                            <a href="categorie.php" class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Categorie
@@ -113,7 +113,6 @@ require '../../app/controllers/AdminController.php';
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-header">EXAMPLES</li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -133,7 +132,7 @@ require '../../app/controllers/AdminController.php';
                         <!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="float-sm-right">
-                                <a name="" id="" class="btn btn-primary" href="addedition.php" role="button"><i class="fa fa-plus fa-" aria-hidden="true"></i> Ajouter un Editions</a>
+                                <a name="" id="" class="btn btn-primary" href="addcategorie.php" role="button"><i class="fa fa-plus fa-" aria-hidden="true"></i> Ajouter une categorie</a>
                             </ol>
                         </div>
                         <!-- /.col -->
@@ -152,21 +151,15 @@ require '../../app/controllers/AdminController.php';
                             <tr>
                                 <th>#</th>
                                 <th>Nom </th>
-                                <th>pegi</th>
-                                <th>Categorie</th>
-                                <th></th>
-                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach($editions as $edition):?>
+                            <?php foreach($categories as $categorie):?>
                             <tr>
-                                <td scope="row"><img height="65px"  src="<?=$edition['img_p']?>" alt=""></td>
-                                <td><?=$edition['editeur']?></td>
-                                <td><?=$edition['pegi']?></td>
-                                <td><?=$edition['categorie']?></td>
-                                <td><a name="" id="" class="btn btn-warning" href="updateedition.php?edition=<?=$edition['id']?>" role="button">Modifier</a></td>
-                                <td><a name="" id="" class="btn btn-danger" href="#" role="button">Supprimer</a></td>
+                                <td scope="row"><img height="65px"  src="<?=$categorie['img_p']?>" alt=""></td>
+                                <td><?=$categorie['categorie']?></td>
+                                <td><a name="" id="" class="btn btn-warning" href="updatecategorie.php?categorie=<?=$categorie['id']?>" role="button">Modifier</a></td>
+                                <td><a name="" id="" class="btn btn-danger" href="deletecategorie.php?categorie=<?=$categorie['id']?>" role="button">Supprimer</a></td>
                             </tr>
                             <?php endforeach; ?>
                           
