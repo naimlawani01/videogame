@@ -1,4 +1,9 @@
 <?php
+/**
+* La classe Database permet d'initialiser la base de donnée.
+*
+* @author NAIM
+*/
 namespace App;
 
 

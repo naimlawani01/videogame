@@ -1,5 +1,12 @@
 <?php
-
+/**
+* Ce fichier fait partie du projet VIDEOGAME.
+*
+* Permet de s'inscrire sur le site
+*
+* @package NAIM/MARC
+* @copyright 2022
+*/
 $errmail = false;
 $errpassword = false;
 
