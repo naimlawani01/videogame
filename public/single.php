@@ -16,8 +16,8 @@
                 <h3 style="font-size: 130%;text-align: start;margin: 0px;font-weight:500">MEILLEURE OFFRE !</h3>
                 <h2 style="font-size: 300%;margin-bottom: 0px;font-weight:600"><?= $jeu['editeur'] ?></h2>
                 <p style="font-size: 130%;margin:0px"><?= $jeu['nom_plateforme'] ?></p>
-                <h1 style="font-family: 'Helvetica';font-size: 480%;margin: 4% 0px;text-align:start"><?= $jeu['prix'] ?> €</h1>
                 <p style="font-size: 130%;margin:0px"><?= $jeu['nom_vendeur'] ?></p>
+                <h1 style="font-family: 'Helvetica';font-size: 480%;margin: 4% 0px;text-align:start"><?= $jeu['prix'] ?> €</h1>
             </div>
         <?php } ?>
             <div style="gap: 20px;display:flex;flex-direction:column">

@@ -28,31 +28,19 @@
     <div id="dvlog">
         <div id="dvlos" onclick="window.location.href = 'archive.php?plateforme=Xbox';" style="cursor: pointer;">
             <img style=" width:35%;margin:auto" src="img/1280px-XBOX_logo_2012 2.png" alt="">
-            <div id="vpls">
-                <p>Voir les jeux Xbox</p>
-                <img id="imrd" src="img/Arrow 9.png" alt="">
-            </div>
+            <a style="text-decoration: none;padding: 10%;" href="archive.php?plateforme=Xbox"><div id="btnjegrid"><h4 style="margin: 3%;">Xbox</h4></div></a>
         </div>
         <div id="dvlos" onclick="window.location.href = 'archive.php?plateforme=Playstation';" style="cursor: pointer;">
             <img style=" width:35%;margin:auto" src="img/1280px-PlayStation_logo 1.png" alt="">
-            <div id="vpls">
-                <p>Voir les jeux Playstation</p>
-                <img id="imrd" src="img/Arrow 9.png" alt="">
-            </div>
+            <a style="text-decoration: none;padding: 10%;" href="archive.php?plateforme=Playstation"><div id="btnjegrid"><h4 style="margin: 3%;">Playstation</h4></div></a>
         </div>
         <div id="dvlos" onclick="window.location.href = 'archive.php?plateforme=Pc';" style="cursor: pointer;">
             <img style=" width:35%;margin:auto" src="img/PC.png" alt="">
-            <div id="vpls">
-                <p>Voir les jeux Pc</p>
-                <img id="imrd" src="img/Arrow 9.png" alt="">
-            </div>
+            <a style="text-decoration: none;padding: 10%;" href="archive.php?plateforme=Pc"><div id="btnjegrid"><h4 style="margin: 3%;">PC</h4></div></a>
         </div>
         <div id="dvlos" onclick="window.location.href = 'archive.php?plateforme=Nintendo';" style="cursor: pointer;">
             <img style=" width:35%;margin:auto" src="img/Nintendo-Logo-1970-1975 2.png" alt="">
-            <div id="vpls">
-                <p>Voir les jeux Nintendo</p>
-                <img id="imrd" src="img/Arrow 9.png" alt="">
-            </div>
+            <a style="text-decoration: none;padding: 10%;" href="archive.php?plateforme=Nintendo"><div id="btnjegrid"><h4 style="margin: 3%;">Nintendo</h4></div></a>
         </div>
     </div>
     <h1 id="hds">Top jeux de la semaine</h1>
@@ -99,7 +87,7 @@
             <div id="card12">
                 <div id="dvhaimg" style="width: 100%;"><img width="50%" style="padding: 15% 0px;" src="img/Ellipse 15.png" alt=""></div>
                 <div id="detj2">
-                    <h4 style="margin: 3%;">Demon Lime</h4>
+                    <h4 style="margin: 3%;">MARC DEVY</h4>
                     <p style="margin: 0 3%;">+100 jeux</p>
                     <img src="img/Frame 60.png" alt="">
                 </div>
@@ -116,7 +104,7 @@
                     <h4 style="margin: 3%;"><?= $edition[$i]['editeur'] ?></h4>
                     <p style="margin: 0 3%;"><?php echo substr($edition[$i]['description'], 0, 45).'...'; ?></p>
                 </div>
-                <a style="text-decoration: none;" href="archive_edition.php?id=<?= $edition[$i]['id']?>"><div id="btnjegrid"><h4 style="margin: 3%;">Voir l'article</h4></div></a>
+                <a style="text-decoration: none;" href="archive_edition.php?id=<?= $edition[$i]['id']?>"><div id="btnjegrid"><h4 style="margin: 3%;">Voir les articles</h4></div></a>
             </div>
         <?php }?>
     </div>

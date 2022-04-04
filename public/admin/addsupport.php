@@ -149,7 +149,7 @@ require '../../app/controllers/AddCategorieController.php';
                     <form action="" id="formulaire" method="post" enctype="multipart/form-data">
                         <div id="formulairejeu">
                             <div style="display: flex;flex-direction:column">
-                                <label for="editeur">Nom de la catégorie</label>
+                                <label for="editeur">Nom du support</label>
                                 <input style="width: 100%;height:46px;border:0px" type="text" name="support" id="support">
                             </div>
                             <div>
