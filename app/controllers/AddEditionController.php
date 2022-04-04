@@ -26,8 +26,8 @@ if(isset($_POST['editeur']) && isset($_POST['pegi']) &&
 
         $valideExtension = ['jpeg', 'jpg', 'png'];
         if(in_array($imgInfo_p['extension'], $valideExtension) && in_array($imgInfo_g['extension'], $valideExtension)){
-            $newImgName_p= "../img/upload/".date('Y_m_d').time().$imgInfo_p['extension'];
-            $newImgName_g= "../img/upload/".date('Y_m_d').time().$imgInfo_g['extension'];
+            $newImgName_p= "../img/upload/".date('Y_m_d').time().'1.'.$imgInfo_p['extension'];
+            $newImgName_g= "../img/upload/".date('Y_m_d').time().'2.'.$imgInfo_g['extension'];
             move_uploaded_file($tmpName_p, $newImgName_p);
             move_uploaded_file($tmpName_g, $newImgName_g);
             $datas = [
@@ -43,4 +43,4 @@ if(isset($_POST['editeur']) && isset($_POST['pegi']) &&
         }else{
             $error= "Extension Invalide";
         }
-    }
+}

@@ -87,7 +87,7 @@ require '../../app/controllers/AdminController.php';
                             </a>
                         </li>
                         <li class="nav-item menu-open">
-                            <a href="dashboard.php" class="nav-link">
+                            <a href="categorie.php" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Categorie
@@ -96,7 +96,7 @@ require '../../app/controllers/AdminController.php';
                             </a>
                         </li>
                         <li class="nav-item menu-open">
-                            <a href="dashboard.php" class="nav-link ">
+                            <a href="plateforme.php" class="nav-link ">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Plateforme
@@ -105,7 +105,7 @@ require '../../app/controllers/AdminController.php';
                             </a>
                         </li>
                         <li class="nav-item menu-open">
-                            <a href="dashboard.php" class="nav-link ">
+                            <a href="support.php" class="nav-link ">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Support
@@ -165,7 +165,7 @@ require '../../app/controllers/AdminController.php';
                                 <td><?=$edition['editeur']?></td>
                                 <td><?=$edition['pegi']?></td>
                                 <td><?=$edition['categorie']?></td>
-                                <td><a name="" id="" class="btn btn-warning" href="#" role="button">Modifier</a></td>
+                                <td><a name="" id="" class="btn btn-warning" href="updateedition.php?edition=<?=$edition['id']?>" role="button">Modifier</a></td>
                                 <td><a name="" id="" class="btn btn-danger" href="#" role="button">Supprimer</a></td>
                             </tr>
                             <?php endforeach; ?>

@@ -105,7 +105,7 @@ function getjeu($db,$ie){
 }
 
 function geteditions($db){
-    $sqled = 'SELECT * FROM edition INNER JOIN categorie ON edition.categorie_id = categorie.id ';
+    $sqled = 'SELECT * FROM categorie  INNER JOIN  edition  ON edition.categorie_id = categorie.id ';
     $queryed = $db->getPDO()->prepare($sqled);
     $queryed->execute();
     $dataeds = $queryed->fetchAll(PDO::FETCH_ASSOC);
@@ -135,7 +135,21 @@ function getCategorie($db){
 }
 function addEdition($db, $data){
     $stmt = $db->getPDO()->prepare('INSERT INTO edition (editeur, pegi, img_p, description, img_g, categorie_id) VALUES (:editeur, :pegi, :img_p, :description, :img_g ,:categorie_id)');
-    var_dump($data);
     return $stmt->execute($data);
 }
 
+function showEdition($db, $idEdition){
+    $sqled = 'SELECT * FROM categorie  INNER JOIN  edition  ON edition.categorie_id = categorie.id where edition.id= :idEdition';
+    $queryed = $db->getPDO()->prepare($sqled);
+    $queryed->execute([
+        'idEdition' => $idEdition
+    ]);
+    $dataeds = $queryed->fetch(PDO::FETCH_ASSOC);
+    return $dataeds;
+
+}
+
+function updateEdition($db, $data){
+    $stmt = $db->getPDO()->prepare("UPDATE edition SET editeur=:editeur, pegi=:pegi, img_p=:img_p, description= :description, img_g =:img_g, categorie_id = :categorie_id WHERE id=:idEdition");
+    return $stmt->execute($data);
+}

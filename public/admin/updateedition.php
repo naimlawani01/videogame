@@ -5,7 +5,7 @@ require '../../app/models/function.php';
 use App\Database;
 
 $db = new Database('videogame'); 
-require '../../app/controllers/AdminController.php';
+require '../../app/controllers/UpdateEditionController.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -128,12 +128,12 @@ require '../../app/controllers/AdminController.php';
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Edition jeux</h1>
+                            <h1 class="m-0">Ajouter un jeux</h1>
                         </div>
                         <!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="float-sm-right">
-                                <a name="" id="" class="btn btn-primary" href="addedition.php" role="button"><i class="fa fa-plus fa-" aria-hidden="true"></i> Ajouter un Editions</a>
+                                <a name="" id="" class="btn btn-primary" href="addgame.php" role="button"><i class="fa fa-plus fa-" aria-hidden="true"></i> Ajouter un jeu</a>
                             </ol>
                         </div>
                         <!-- /.col -->
@@ -147,31 +147,46 @@ require '../../app/controllers/AdminController.php';
             <!-- Main content -->
             <div class="content">
                 <div class="container-fluid">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Nom </th>
-                                <th>pegi</th>
-                                <th>Categorie</th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach($editions as $edition):?>
-                            <tr>
-                                <td scope="row"><img height="65px"  src="<?=$edition['img_p']?>" alt=""></td>
-                                <td><?=$edition['editeur']?></td>
-                                <td><?=$edition['pegi']?></td>
-                                <td><?=$edition['categorie']?></td>
-                                <td><a name="" id="" class="btn btn-warning" href="updateedition.php?edition=<?=$edition['id']?>" role="button">Modifier</a></td>
-                                <td><a name="" id="" class="btn btn-danger" href="#" role="button">Supprimer</a></td>
-                            </tr>
-                            <?php endforeach; ?>
-                          
-                        </tbody>
-                    </table>
+                    <form action="" id="formulaire" method="post" enctype="multipart/form-data">
+                        <div id="formulairejeu">
+                            <?php if(isset($message) and $message): ?>
+                                <div class="card text-white bg-danger py-2">
+                                    <center><?=$message?></center>
+                                </div>
+                            <?php endif; ?>
+                            <div style="display: flex;flex-direction:column">
+                                <label for="editeur">Editeur</label>
+                                <input value="<?=$edition['editeur']?>" style="width: 100%;height:46px;border:0px" type="text" name="editeur" id="editeur">
+                            </div>
+                            <div style="display: flex;flex-direction:column">
+                                <label for="pegi">PEGI</label>
+                                <input value="<?=$edition['pegi']?>" name="pegi" type="text" style="width: 100%;height:46px;border:0px">
+                            </div>
+                            <div style="display: flex;flex-direction:column">
+                                <label for="categorie">Categorie</label>
+                                <select name="categorie" id="roleis">
+                                    <?php foreach ($categories as $categorie) { ?>
+                                        <option <?php if($categorie['id']==$edition['categorie_id']) echo 'selected' ?> value="<?= $categorie['id'] ?>"><?= $categorie['categorie'] ?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+                            <div style="display: flex;flex-direction:column">
+                                <label for="image_p">Petite Image  </label>
+                                <input value="hell.php" type="file" name="image_p" id="image_p" cols="30" rows="10">
+                            </div>
+                            <div style="display: flex;flex-direction:column">
+                                <label for="image_g">Grane Image </label>
+                                <input type="file" name="image_g" id="image_g" cols="30" rows="10">
+                            </div>
+                            <div style="display: flex;flex-direction:column">
+                                <label for="description">Description</label>
+                                <textarea name="description" id="description" cols="30" rows="10"><?=$edition['description']?></textarea>
+                            </div>
+                            <div>
+                                <input type="submit" value="Ajouter le jeu" id="submit">
+                            </div>
+                        </div>
+                    </form>
                 </div>
                 <!-- /.container-fluid -->
             </div>
@@ -180,12 +195,6 @@ require '../../app/controllers/AdminController.php';
         <!-- /.content-wrapper -->
 
         <!-- Main Footer -->
-        <footer class="main-footer">
-            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-            <div class="float-right d-none d-sm-inline-block">
-                <b>Version</b> 3.2.0
-            </div>
-        </footer>
     </div>
     <!-- ./wrapper -->
 
