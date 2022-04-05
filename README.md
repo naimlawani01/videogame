@@ -4,7 +4,7 @@ Ce projet vise à faciliter l’achat et la vente de jeux vidéos neufs ou d’o
 
 
 
-#### Racice du projet 
+### Racice du projet 
 + Dans le dossier public/
 #### Base de donnée
 videogame.sql
