@@ -31,4 +31,5 @@ videogame
 ## Dans le server 
 + IP privée 192.168.1.52
 + Adresse IP:  185.189.157.157
++ ssh -i h2fullstack debian@185.189.157.157
 + ssh -i h2fullstack debian@185.189.157.157 -L 3306:127.0.0.1:3306 -N 
