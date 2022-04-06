@@ -148,7 +148,7 @@ require '../../app/controllers/PlateformeController.php';
                                 <td scope="row"><img height="65px"  src="<?=$plateforme['nom']?>" alt=""></td>
                                 <td><?=$plateforme['nom']?></td>
                                 <td><a name="" id="" class="btn btn-warning" href="updateplateforme.php?plateforme=<?=$plateforme['id']?>" role="button">Modifier</a></td>
-                                <td><a name="" id="" class="btn btn-danger" href="deleteplatforme.php?plateforme=<?=$plateforme['id']?>" role="button">Supprimer</a></td>
+                                <td><a name="" id="" class="btn btn-danger" href="deleteplateforme.php?plateforme=<?=$plateforme['id']?>" role="button">Supprimer</a></td>
                             </tr>
                             <?php endforeach; ?>
                           

@@ -148,7 +148,7 @@ require '../../app/controllers/SupportController.php';
                                 <td scope="row"><img height="65px"  src="<?=$support['nom']?>" alt=""></td>
                                 <td><?=$support['nom']?></td>
                                 <td><a name="" id="" class="btn btn-warning" href="updatesupport.php?support=<?=$support['id']?>" role="button">Modifier</a></td>
-                                <td><a name="" id="" class="btn btn-danger" href="deletecategorie.php?support=<?=$support['id']?>" role="button">Supprimer</a></td>
+                                <td><a name="" id="" class="btn btn-danger" href="deletesupport.php?support=<?=$support['id']?>" role="button">Supprimer</a></td>
                             </tr>
                             <?php endforeach; ?>
                           
