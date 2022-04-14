@@ -110,3 +110,4 @@
     </div>
     
 </main>
+<script src="js/scrit.js"></script>

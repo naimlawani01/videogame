@@ -16,7 +16,7 @@ Class Database{
     private $dbuser;
     private $dbpwd;
     private $pdo;
-    public function __construct( $dbname, $host = '127.0.0.1' , $dbuser= 'root', $dbpwd= 'videogame')
+    public function __construct( $dbname, $host = 'localhost' , $dbuser= 'root', $dbpwd= '')
     {
         $this->host= $host;
         $this->dbname= $dbname;

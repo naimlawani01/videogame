@@ -25,8 +25,8 @@ if(isConnected()){
     <div id="navpp">
         <div id="navha">
             <div id="navhaform">
-                <form action="" method="get" style="width: 100%;display: flex;height: 52px;">
-                    <input style="width: 100%;margin: 0px;border: none;background-color: #EDEDED;" type="text">
+                <form action="" style="width: 100%;display: flex;height: 52px;" id="subre">
+                    <input style="width: 100%;margin: 0px;border: none;background-color: #EDEDED;" name="rech" type="text" id="q">
                     <button style="height: 100%;margin: 0px;border: none;background-color: #D2D2D2;" type="submit"><img src="img/akar-icons_search.png" alt=""></button>
                 </form>
             </div>
@@ -46,6 +46,7 @@ if(isConnected()){
                 <img style="height: 100%;" src="img/noun-heart-4714219 1.png" alt="">
             </div>
         </div>
+        <div id="affichejeux"></div>
         <div style="margin: 2% 0px;">
             <ul style="list-style: none;display:flex;gap:2%">
                 <a href="index.php"><li>Home</li></a>

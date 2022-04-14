@@ -26,3 +26,6 @@
                 </div>
             <?php }?>
         </div>
+
+
+        <script src="js/scrit.js"></script>

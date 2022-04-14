@@ -435,3 +435,21 @@ function getuserinf($db, $userid){
     $datas= $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $datas;
 }
+
+function getnomjeux($db,$jeux) {
+    $requet = $db->getPDO()->prepare('SELECT editeur as nomdujeu, id FROM `edition` WHERE editeur LIKE :jeux');
+    if($jeux === '') {
+        $requet->execute([
+            'jeux' => ''
+        ]); 
+        $datas= $requet->fetchAll(PDO::FETCH_ASSOC);
+        return $datas; 
+    } else {
+        $requet->execute([
+            'jeux' => $jeux.'%'
+        ]);
+        $datas= $requet->fetchAll(PDO::FETCH_ASSOC);
+        return $datas;
+    }
+    
+}

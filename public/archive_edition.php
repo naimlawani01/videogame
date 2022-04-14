@@ -31,3 +31,5 @@
     <?php } else { ?>
         <h1>Pas encore de jeux pour cette edition</h1>
     <?php }?>
+
+    <script src="js/scrit.js"></script>
