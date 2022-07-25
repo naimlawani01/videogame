@@ -13,7 +13,7 @@ videogame
 
 # Instalition du projet 
 ## Run 
-+ compposer update
++ composer update
 + composer install
 + composer dump-autoload
 
